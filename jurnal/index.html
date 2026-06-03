@@ -1,1 +1,608 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NFA Family – Umroh 1448H / 2026</title>
+<meta name="description" content="Dokumentasi perjalanan umroh keluarga NFA Family, 24 Juni – 03 Juli 2026. Jakarta · Muscat · Makkah · Madinah · Thaif.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:       #C9A84C;
+    --gold-light: #F5EBCA;
+    --ink:        #1A1814;
+    --ink-soft:   #4A4640;
+    --ink-muted:  #8A857E;
+    --bg:         #FAFAF7;
+    --bg-warm:    #F5F2EA;
+    --border:     #E8E3D8;
+  }
 
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.7;
+  }
+
+  /* ── NAV ── */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 40px;
+    border-bottom: 0.5px solid var(--border);
+    position: sticky; top: 0;
+    background: var(--bg);
+    z-index: 100;
+  }
+  .nav-brand {
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .nav-brand span { color: var(--gold); }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a { font-size: 13px; color: var(--ink-muted); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover { color: var(--ink); }
+
+  /* ── HERO ── */
+  .hero {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 80px 40px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .hero-left {}
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .hero-sub {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+  .hero-cta {
+    display: inline-block;
+    background: var(--ink);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: background .2s;
+  }
+  .hero-cta:hover { background: var(--ink-soft); }
+  .hero-cta-sec {
+    display: inline-block;
+    font-size: 13px;
+    color: var(--ink-muted);
+    text-decoration: none;
+    margin-left: 16px;
+    border-bottom: 0.5px solid var(--border);
+    padding-bottom: 1px;
+  }
+
+  /* Stats box kanan hero */
+  .hero-right {}
+  .stats-box {
+    background: var(--bg-warm);
+    border: 0.5px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+  }
+  .stats-route {
+    font-family: 'Lora', serif;
+    font-size: 12px;
+    color: var(--ink-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .stat-cell {
+    background: var(--bg);
+    padding: 16px;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .stat-lbl {
+    font-size: 11px;
+    color: var(--ink-muted);
+    margin-top: 4px;
+  }
+  .trip-dates {
+    text-align: center;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .trip-dates strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 40px;
+    border-top: 0.5px solid var(--border);
+  }
+
+  /* ── SECTION LABEL ── */
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ── DAFTAR HARI ── */
+  .days-section {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 56px 40px;
+  }
+  .days-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 28px;
+  }
+  .days-list { display: flex; flex-direction: column; gap: 1px; }
+
+  .day-row {
+    display: grid;
+    grid-template-columns: 52px 1fr auto;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 20px;
+    background: var(--bg);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: background .15s, border-color .15s;
+  }
+  .day-row:hover { background: var(--bg-warm); border-color: #D8D3C8; }
+
+  .day-num-badge {
+    font-size: 11px;
+    font-weight: 500;
+    text-align: center;
+    background: var(--bg-warm);
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 4px;
+    color: var(--ink-muted);
+  }
+  .day-num-badge .hn { font-size: 15px; font-weight: 600; color: var(--ink); display: block; }
+
+  .day-info {}
+  .day-title-row { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
+  .day-date-row  { font-size: 12px; color: var(--ink-muted); }
+
+  .day-tags { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+  .tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 3px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .t-ibadah { background: #EAF3DE; color: #3B6D11; }
+  .t-ziarah  { background: #E6F1FB; color: #185FA5; }
+  .t-tour    { background: #FAEEDA; color: #854F0B; }
+  .t-flight  { background: #EEEDFE; color: #534AB7; }
+  .t-hotel   { background: var(--bg-warm); color: var(--ink-muted); border: 0.5px solid var(--border); }
+
+  /* highlight umroh rows */
+  .day-row.umroh { border-color: #D4C090; }
+  .day-row.umroh .day-num-badge { background: var(--gold-light); border-color: var(--gold); }
+  .day-row.umroh .day-num-badge .hn { color: #7A5C10; }
+
+  /* ── KOTA SECTION ── */
+  .cities-section {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 40px 56px;
+  }
+  .cities-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .city-card {
+    background: var(--bg-warm);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: border-color .15s;
+  }
+  .city-card:hover { border-color: #C8C3B8; }
+  .city-icon { font-size: 24px; margin-bottom: 8px; }
+  .city-name { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
+  .city-days { font-size: 12px; color: var(--ink-muted); }
+
+  /* ── TENTANG SECTION ── */
+  .about-section {
+    background: var(--bg-warm);
+    border-top: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .about-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 56px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .about-inner h2 {
+    font-family: 'Lora', serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+  .about-inner p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+  .about-right {}
+  .niat-box {
+    border-left: 2px solid var(--gold);
+    padding: 16px 20px;
+    background: var(--bg);
+    border-radius: 0 8px 8px 0;
+  }
+  .niat-box p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.8;
+    margin-bottom: 8px;
+  }
+  .niat-box .attr { font-size: 12px; color: var(--ink-muted); font-style: normal; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 28px 40px;
+    border-top: 0.5px solid var(--border);
+    font-size: 12px;
+    color: var(--ink-muted);
+  }
+  footer a { color: var(--ink-muted); text-decoration: none; }
+  footer a:hover { color: var(--ink); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 680px) {
+    nav { padding: 12px 16px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 40px 16px 32px; gap: 32px; }
+    .divider, .days-section, .cities-section { padding-left: 16px; padding-right: 16px; }
+    .about-inner { grid-template-columns: 1fr; padding: 40px 16px; gap: 32px; }
+    .cities-grid { grid-template-columns: 1fr 1fr; }
+    .day-row { grid-template-columns: 44px 1fr; }
+    .day-tags { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <a class="nav-brand" href="index.html">NFA <span>Family</span></a>
+  <div class="nav-links">
+    <a href="jurnal/index.html">Jurnal</a>
+    <a href="galeri/index.html">Galeri</a>
+    <a href="peta.html">Peta</a>
+  </div>
+</nav>
+
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Umroh 1448 H / 2026 M</div>
+    <h1>Perjalanan<br>keluarga NFA<br>ke Baitullah</h1>
+    <p class="hero-sub">
+      Dokumentasi lengkap perjalanan ibadah umroh kami —
+      cerita harian, foto, dan video dari setiap kota yang kami singgahi.
+    </p>
+    <a class="hero-cta" href="jurnal/index.html">Baca jurnal →</a>
+    <a class="hero-cta-sec" href="galeri/index.html">Lihat galeri</a>
+  </div>
+
+  <div class="hero-right">
+    <div class="stats-box">
+      <div class="stats-route">Jakarta · Muscat · Makkah · Madinah · Thaif</div>
+      <div class="stats-grid">
+        <div class="stat-cell">
+          <div class="stat-num">10</div>
+          <div class="stat-lbl">Hari perjalanan</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">2</div>
+          <div class="stat-lbl">Ibadah umroh</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">4</div>
+          <div class="stat-lbl">Kota</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">WY</div>
+          <div class="stat-lbl">Oman Air</div>
+        </div>
+      </div>
+      <div class="trip-dates">
+        <strong>24 Juni – 03 Juli 2026</strong>
+        9 malam · 10 hari
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══ DAFTAR HARI ═══ -->
+<div class="divider"></div>
+<div class="days-section">
+  <div class="days-header">
+    <span class="section-label">Jurnal perjalanan</span>
+    <a href="jurnal/index.html" style="font-size:12px;color:var(--ink-muted);text-decoration:none;">Lihat semua →</a>
+  </div>
+
+  <div class="days-list">
+
+    <a class="day-row" href="jurnal/h01-jakarta-muscat.html">
+      <div class="day-num-badge"><span class="hn">H1</span>24 Jun</div>
+      <div class="day-info">
+        <div class="day-title-row">Jakarta → Muscat, Oman</div>
+        <div class="day-date-row">Rabu, 24 Juni 2026</div>
+      </div>
+      <div class="day-tags">
+        <span class="tag t-flight">WY 850</span>
+        <span class="tag t-hotel">Muscat</span>
+      </div>
+    </a>
+
+    <a class="day-row umroh" href="jurnal/h02-muscat-makkah.html">
+      <div class="day-num-badge"><span class="hn">H2</span>25 Jun</div>
+      <div class="day-info">
+        <div class="day-title-row">Oman → Thaif → Makkah · Umroh ke-1</div>
+        <div class="day-date-row">Kamis, 25 Juni 2026</div>
+      </div>
+      <div class="day-tags">
+        <span class="tag t-tour">Matrah Souq</span>
+        <span class="tag t-flight">WY 699</span>
+        <span class="tag t-ibadah">Umroh 1</span>
+      </div>
+    </a>
+
+    <a class="day-row" href="jurnal/h03-makkah-ibadah.html">
+      <div class="day-num-badge"><span class="hn">H3</span>26 Jun</div>
+      <div class="day-info">
+        <div class="day-title-row">Makkah – Ibadah mandiri</div>
+        <div class="day-date-row">Jum'at, 26 Juni 2026</div>
+      </div>
+      <div class="day-tags">
+        <span class="tag t-ibadah">Sholat Jum'at</span>
+        <span class="tag t-ibadah">Masjidil Haram</span>
+      </div>
+    </a>
+
+    <a class="day-row umroh" href="jurnal/h04-makkah-ziarah.html">
+      <div class="day-num-badge"><span class="hn">H4</span>27 Jun</div>
+      <div class="day-info">
+        <div class="day-title-row">Makkah – Ziarah Luar & Umroh ke-2</div>
+        <div class="day-date-row">Sabtu, 27 Juni 2026</div>
+      </div>
+      <div class="day-tags">
+        <span class="tag t-ziarah">Jabal Nur</span>
+        <span class="tag t-ziarah">Arafah</span>
+        <span class="tag t-ibadah">Umroh 2</span>
+      </div>
+    </a>
+
+    <a class="day-row" href="jurnal/h05-makkah-madinah.html">
+      <div class="day-num-badge"><span class="hn">H5</span>28 Jun</div>
+      <div class="day-info">
+        <div class="day-title-row">Makkah → Madinah · Thawaf Wada'</div>
+        <div class="day-date-row">Ahad, 28 Juni 2026</div>
+      </div>
+      <div class="day-tags">
+        <span class="tag t-ibadah">Thawaf Wada'</span>
+        <span class="tag t-hotel">Madinah</span>
+      </div>
+    </a>
+
+    <a class="day-row" href="jurnal/h06-madinah-raudhah.html">
+      <div class="day-num-badge"><span class="hn">H6</span>29 Jun</div>
+      <div class="day-info">
+        <div class="day-title-row">Madinah – Ziarah Dalam & Raudhah</div>
+        <div class="day-date-row">Senin, 29 Juni 2026</div>
+      </div>
+      <div class="day-tags">
+        <span class="tag t-ziarah">Raudhah</span>
+        <span class="tag t-ziarah">Makam Rasulullah</span>
+      </div>
+    </a>
+
+    <a class="day-row" href="jurnal/h07-madinah-citytour.html">
+      <div class="day-num-badge"><span class="hn">H7</span>30 Jun</div>
+      <div class="day-info">
+        <div class="day-title-row">Madinah – City Tour Kota Nabawi</div>
+        <div class="day-date-row">Selasa, 30 Juni 2026</div>
+      </div>
+      <div class="day-tags">
+        <span class="tag t-tour">Masjid Quba</span>
+        <span class="tag t-tour">Jabal Uhud</span>
+      </div>
+    </a>
+
+    <a class="day-row" href="jurnal/h08-madinah-thaif.html">
+      <div class="day-num-badge"><span class="hn">H8</span>1 Jul</div>
+      <div class="day-info">
+        <div class="day-title-row">Madinah → Thaif</div>
+        <div class="day-date-row">Rabu, 01 Juli 2026</div>
+      </div>
+      <div class="day-tags">
+        <span class="tag t-hotel">Thaif</span>
+      </div>
+    </a>
+
+    <a class="day-row" href="jurnal/h09-thaif-muscat.html">
+      <div class="day-num-badge"><span class="hn">H9</span>2 Jul</div>
+      <div class="day-info">
+        <div class="day-title-row">City Tour Thaif → Muscat, Oman</div>
+        <div class="day-date-row">Kamis, 02 Juli 2026</div>
+      </div>
+      <div class="day-tags">
+        <span class="tag t-tour">Telefrik</span>
+        <span class="tag t-flight">WY 700</span>
+      </div>
+    </a>
+
+    <a class="day-row" href="jurnal/h10-pulang.html">
+      <div class="day-num-badge"><span class="hn">H10</span>3 Jul</div>
+      <div class="day-info">
+        <div class="day-title-row">Muscat → Jakarta – Alhamdulillah</div>
+        <div class="day-date-row">Jum'at, 03 Juli 2026</div>
+      </div>
+      <div class="day-tags">
+        <span class="tag t-flight">CGK 12:55</span>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ═══ KOTA ═══ -->
+<div class="divider"></div>
+<div class="cities-section" style="padding-top:48px;">
+  <span class="section-label">Kota yang dikunjungi</span>
+  <div class="cities-grid">
+    <div class="city-card">
+      <div class="city-icon">🕌</div>
+      <div class="city-name">Muscat</div>
+      <div class="city-days">H1 & H2 · Transit Oman</div>
+    </div>
+    <div class="city-card">
+      <div class="city-icon">🕋</div>
+      <div class="city-name">Makkah</div>
+      <div class="city-days">H2–H5 · 2 Umroh</div>
+    </div>
+    <div class="city-card">
+      <div class="city-icon">🌿</div>
+      <div class="city-name">Madinah</div>
+      <div class="city-days">H5–H8 · Masjid Nabawi</div>
+    </div>
+    <div class="city-card">
+      <div class="city-icon">🏔</div>
+      <div class="city-name">Thaif</div>
+      <div class="city-days">H8–H9 · City Tour</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══ TENTANG ═══ -->
+<div class="about-section">
+  <div class="about-inner">
+    <div>
+      <h2>Tentang website ini</h2>
+      <!-- Isi dengan cerita keluarga NFA -->
+      <p>
+        Website ini adalah dokumentasi pribadi perjalanan umroh
+        keluarga NFA Family pada 1448 H / 2026 M.
+        Dibuat agar kenangan ini bisa dinikmati bersama —
+        oleh keluarga yang menemani dari jauh, maupun
+        sebagai pengingat di kemudian hari.
+      </p>
+      <p>
+        Setiap halaman jurnal berisi cerita harian, foto, dan video
+        dari perjalanan kami di Muscat, Makkah, Madinah, dan Thaif.
+      </p>
+    </div>
+    <div>
+      <div class="niat-box">
+        <!-- Ganti dengan doa/niat keluarga -->
+        <p>
+          "Ya Allah, terimalah ibadah kami, ampunilah dosa-dosa kami,
+          dan perkenankan kami untuk kembali ke rumah-Mu."
+        </p>
+        <div class="attr">— Doa keluarga NFA sebelum berangkat</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <p>NFA Family · Umroh 1448H / 2026 &nbsp;·&nbsp;
+    <a href="jurnal/index.html">Jurnal</a> &nbsp;·&nbsp;
+    <a href="galeri/index.html">Galeri</a> &nbsp;·&nbsp;
+    <a href="peta.html">Peta</a>
+  </p>
+  <p style="margin-top:6px;font-size:11px;opacity:0.55;">
+    Perjalanan bersama Alviandra Edu Wisata · Izin Umroh No. 16032300311480002
+  </p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hari 1 – Berangkat dari Jakarta menuju Muscat | NFA Family 1448H</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A84C;--gold-light:#F5EBCA;--ink:#1A1814;--ink-soft:#4A4640;--ink-muted:#8A857E;--bg:#FAFAF7;--bg-warm:#F5F2EA;--border:#E8E3D8;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 40px;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;}
+.nav-brand{font-family:'Lora',serif;font-size:15px;color:var(--ink);text-decoration:none;}
+.nav-brand span{color:var(--gold);}
+.nav-links{display:flex;gap:24px;}
+.nav-links a{font-size:13px;color:var(--ink-muted);text-decoration:none;}
+.nav-links a:hover{color:var(--ink);}
+.nav-day{font-size:12px;color:var(--ink-muted);border:0.5px solid var(--border);padding:4px 12px;border-radius:20px;}
+.hero{padding:64px 40px 48px;max-width:820px;margin:0 auto;}
+.hero-meta{display:flex;gap:8px;align-items:center;margin-bottom:20px;flex-wrap:wrap;}
+.tag{font-size:10px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;padding:3px 9px;border-radius:20px;}
+.t-day{background:var(--ink);color:#fff;}
+.t-loc{background:var(--bg-warm);color:var(--ink-soft);border:0.5px solid var(--border);}
+.t-ibadah{background:#EAF3DE;color:#3B6D11;}
+.t-ziarah{background:#E6F1FB;color:#185FA5;}
+.t-tour{background:#FAEEDA;color:#854F0B;}
+.t-flight{background:#EEEDFE;color:#534AB7;}
+.hero h1{font-family:'Lora',serif;font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.25;margin-bottom:10px;}
+.hero-date{font-size:13px;color:var(--ink-muted);margin-bottom:18px;}
+.hero-intro{font-family:'Lora',serif;font-style:italic;font-size:16px;color:var(--ink-soft);line-height:1.8;border-left:2px solid var(--gold);padding-left:18px;}
+.wrap{max-width:820px;margin:0 auto;padding:0 40px 80px;}
+.sec-label{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin:44px 0 18px;display:block;}
+.timeline{border-left:1px solid var(--border);padding-left:28px;margin-left:6px;}
+.tl-item{position:relative;margin-bottom:26px;}
+.tl-dot{position:absolute;left:-35px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:8px;}
+.tl-dot.hi{border-color:var(--gold);background:var(--gold-light);}
+.tl-time{font-size:11px;color:var(--ink-muted);margin-bottom:3px;}
+.tl-title{font-size:15px;font-weight:500;margin-bottom:3px;}
+.tl-desc{font-size:13px;color:var(--ink-soft);}
+.narasi{font-family:'Lora',serif;font-size:16px;line-height:1.85;color:var(--ink-soft);}
+.narasi p{margin-bottom:16px;}
+.photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-bottom:8px;}
+.photo-item{aspect-ratio:4/3;border-radius:8px;overflow:hidden;background:var(--bg-warm);border:0.5px solid var(--border);}
+.photo-item a{display:block;height:100%;}
+.photo-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s;}
+.photo-item img:hover{transform:scale(1.04);}
+.photo-cap{font-size:11px;color:var(--ink-muted);margin-top:5px;text-align:center;}
+.video-wrap{border-radius:12px;overflow:hidden;border:0.5px solid var(--border);aspect-ratio:16/9;}
+.video-wrap iframe{width:100%;height:100%;border:none;display:block;}
+.video-cap{font-size:12px;color:var(--ink-muted);margin-top:7px;text-align:center;}
+.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.loc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;}
+.loc-card{background:var(--bg-warm);border:0.5px solid var(--border);border-radius:10px;padding:14px 15px;}
+.loc-icon{font-size:18px;margin-bottom:5px;}
+.loc-name{font-size:13px;font-weight:500;}
+.loc-note{font-size:11px;color:var(--ink-muted);margin-top:2px;}
+.hint-box{background:var(--bg-warm);border:0.5px solid var(--border);border-radius:8px;padding:14px 16px;font-size:12px;color:var(--ink-muted);line-height:1.6;margin-bottom:16px;}
+.hint-box strong{color:var(--ink-soft);}
+.day-nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;border-top:0.5px solid var(--border);margin-top:44px;}
+.day-nav a{font-size:13px;color:var(--ink-soft);text-decoration:none;}
+.day-nav a:hover{color:var(--ink);}
+.day-nav .mid{font-size:12px;color:var(--ink-muted);}
+footer{text-align:center;padding:22px 40px;border-top:0.5px solid var(--border);font-size:12px;color:var(--ink-muted);}
+footer a{color:var(--ink-muted);text-decoration:none;}
+@media(max-width:600px){nav{padding:12px 16px;}.nav-links{display:none;}.hero,.wrap{padding-left:16px;padding-right:16px;}.video-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-brand" href="../index.html">NFA <span>Family</span></a>
+  <div class="nav-links">
+    <a href="../index.html">Beranda</a>
+    <a href="index.html">Jurnal</a>
+    <a href="../galeri/index.html">Galeri</a>
+    <a href="../peta.html">Peta</a>
+  </div>
+  <span class="nav-day">Hari 1 dari 10</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-meta">
+    <span class="tag t-day">Hari 1</span>
+    <span class="tag t-loc">Jakarta</span><span class="tag t-loc">Muscat</span><span class="tag t-flight">WY 850</span>
+  </div>
+  <h1>Berangkat dari Jakarta menuju Muscat</h1>
+  <div class="hero-date">Rabu, 24 Juni 2026 · Jakarta → Muscat, Oman</div>
+  <p class="hero-intro">Hari yang ditunggu-tunggu akhirnya tiba. Pagi ini keluarga kami berkumpul di Terminal 3 Soekarno-Hatta, bersiap memulai perjalanan panjang menuju Tanah Haram.</p>
+</div>
+
+<div class="wrap">
+
+  <span class="sec-label">Rundown hari ini</span>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-dot">🚌</div><div class="tl-time">10:00 WIB</div><div class="tl-title">Berkumpul di Lounge Zukafia</div><div class="tl-desc">Terminal 3, Bandara Soekarno-Hatta. Registrasi ulang, pemeriksaan dokumen, dan persiapan keberangkatan bersama jamaah lain.</div></div>
+    <div class="tl-item"><div class="tl-dot hi">✈</div><div class="tl-time">14:25 WIB</div><div class="tl-title">Take off Jakarta → Muscat</div><div class="tl-desc">Oman Air WY 850. Penerbangan sekitar 8 jam menuju Bandara Internasional Muscat.</div></div>
+    <div class="tl-item"><div class="tl-dot">🏨</div><div class="tl-time">19:50 Waktu Oman</div><div class="tl-title">Tiba di Muscat — check-in hotel</div><div class="tl-desc">Proses imigrasi, pengambilan bagasi, dan transfer ke hotel. Istirahat untuk mempersiapkan aktivitas esok pagi.</div></div>
+  </div>
+
+  <span class="sec-label">Cerita hari ini</span>
+  <div class="narasi">
+    <p>Tulis cerita dan kesan perjalanan hari ini di sini. Bisa dikerjakan setelah perjalanan selesai — tidak perlu terburu-buru saat masih di sana.</p>
+    <p>Ceritakan momen yang paling berkesan, hal-hal kecil yang bermakna, atau perasaan yang sulit dijelaskan dengan kata-kata sekalipun.</p>
+  </div>
+
+  <span class="sec-label">Foto perjalanan</span>
+  <div class="hint-box">
+    <strong>Cara isi foto dari Google Photos / Drive:</strong><br>
+    1. Upload foto ke Google Drive → klik kanan → Share → Anyone with link<br>
+    2. Salin FILE_ID dari URL (bagian /d/<strong>FILE_ID</strong>/view)<br>
+    3. Tempel di <code>src="https://drive.google.com/uc?export=view&amp;id=FILE_ID"</code><br>
+    4. Untuk link klik foto, tempel link Google Photos di <code>href="..."</code>
+  </div>
+  <div class="photo-grid">
+    <div class="photo-item">
+      <a href="https://photos.app.goo.gl/LINK_FOTO_1" target="_blank" rel="noopener">
+        <img src="https://drive.google.com/uc?export=view&id=FILE_ID_1" alt="Foto 1" loading="lazy">
+      </a>
+      <div class="photo-cap">Caption foto 1</div>
+    </div>
+    <div class="photo-item">
+      <a href="https://photos.app.goo.gl/LINK_FOTO_2" target="_blank" rel="noopener">
+        <img src="https://drive.google.com/uc?export=view&id=FILE_ID_2" alt="Foto 2" loading="lazy">
+      </a>
+      <div class="photo-cap">Caption foto 2</div>
+    </div>
+    <div class="photo-item">
+      <a href="https://photos.app.goo.gl/LINK_FOTO_3" target="_blank" rel="noopener">
+        <img src="https://drive.google.com/uc?export=view&id=FILE_ID_3" alt="Foto 3" loading="lazy">
+      </a>
+      <div class="photo-cap">Caption foto 3</div>
+    </div>
+    <div class="photo-item">
+      <a href="https://photos.app.goo.gl/LINK_FOTO_4" target="_blank" rel="noopener">
+        <img src="https://drive.google.com/uc?export=view&id=FILE_ID_4" alt="Foto 4" loading="lazy">
+      </a>
+      <div class="photo-cap">Caption foto 4</div>
+    </div>
+  </div>
+
+  <span class="sec-label">Video momen</span>
+  <div class="hint-box">
+    <strong>Cara isi video YouTube:</strong><br>
+    1. Upload video ke YouTube (pilih <em>Unlisted</em> agar tidak muncul di publik)<br>
+    2. Klik Share → Embed → ambil VIDEO_ID dari src iframe<br>
+    3. Atau ambil dari URL: youtube.com/watch?v=<strong>VIDEO_ID</strong><br>
+    4. Tempel di <code>src="https://www.youtube.com/embed/VIDEO_ID"</code>
+  </div>
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_DISINI"
+      title="Berangkat dari Jakarta menuju Muscat – NFA Family"
+      allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
+  <div class="video-cap">Caption video · Jakarta · 24 Juni 2026</div>
+
+  <span class="sec-label">Lokasi hari ini</span>
+  <div class="loc-grid">
+    <div class="loc-card"><div class="loc-icon">🛫</div><div class="loc-name">Bandara Soekarno-Hatta</div><div class="loc-note">Terminal 3, Jakarta</div></div>
+    <div class="loc-card"><div class="loc-icon">🏨</div><div class="loc-name">Bandara Internasional Muscat</div><div class="loc-note">Muscat, Oman</div></div>
+  </div>
+
+  <div class="day-nav">
+    <span style="color:var(--ink-muted);font-size:13px;">← Awal perjalanan</span>
+    <span class="mid">Hari 1 dari 10</span>
+    <a href="h02-muscat-makkah.html">H2 · Oman → Makkah →</a>
+  </div>
+</div>
+
+<footer>
+  <p>NFA Family · Umroh 1448H / 2026 &nbsp;·&nbsp; <a href="../index.html">Beranda</a></p>
+  <p style="margin-top:5px;font-size:11px;opacity:0.55;">Perjalanan bersama Alviandra Edu Wisata · Izin Umroh No. 16032300311480002</p>
+</footer>
+</body>
+</html>
