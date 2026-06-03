@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peta Perjalanan – NFA Family Umroh 1448H</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A84C;--gold-light:#F5EBCA;--ink:#1A1814;--ink-soft:#4A4640;--ink-muted:#8A857E;--bg:#FAFAF7;--bg-warm:#F5F2EA;--border:#E8E3D8;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 40px;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;}
+.nav-brand{font-family:'Lora',serif;font-size:15px;color:var(--ink);text-decoration:none;}
+.nav-brand span{color:var(--gold);}
+.nav-links{display:flex;gap:24px;}
+.nav-links a{font-size:13px;color:var(--ink-muted);text-decoration:none;}
+.nav-links a:hover{color:var(--ink);}
+.hero{padding:56px 40px 36px;max-width:860px;margin:0 auto;}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.hero h1{font-family:'Lora',serif;font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;margin-bottom:10px;}
+.hero-sub{font-size:14px;color:var(--ink-muted);}
+.wrap{max-width:860px;margin:0 auto;padding:0 40px 80px;}
+.sec-label{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin:36px 0 14px;display:block;}
+
+/* Rute visual */
+.rute-wrap{display:flex;align-items:center;flex-wrap:wrap;gap:0;margin-bottom:32px;padding:20px 24px;background:var(--bg-warm);border:0.5px solid var(--border);border-radius:12px;overflow-x:auto;}
+.rute-kota{text-align:center;min-width:80px;}
+.rute-kota .icon{font-size:22px;margin-bottom:4px;}
+.rute-kota .nama{font-size:12px;font-weight:500;color:var(--ink);}
+.rute-kota .hari{font-size:10px;color:var(--ink-muted);}
+.rute-arrow{font-size:14px;color:var(--border);margin:0 6px;padding-bottom:16px;}
+
+/* Lokasi cards */
+.lokasi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:32px;}
+.lokasi-card{background:var(--bg);border:0.5px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color .15s;}
+.lokasi-card:hover{border-color:#C8C3B8;}
+.lokasi-map{width:100%;height:160px;border:none;display:block;}
+.lokasi-body{padding:12px 14px;}
+.lokasi-title{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:3px;}
+.lokasi-sub{font-size:12px;color:var(--ink-muted);}
+.lokasi-hari{display:inline-block;font-size:10px;font-weight:500;padding:2px 8px;border-radius:20px;background:var(--bg-warm);color:var(--ink-soft);border:0.5px solid var(--border);margin-top:6px;}
+
+/* Full map */
+.map-full{border-radius:14px;overflow:hidden;border:0.5px solid var(--border);margin-bottom:8px;}
+.map-full iframe{width:100%;height:460px;border:none;display:block;}
+.map-note{font-size:12px;color:var(--ink-muted);text-align:center;margin-top:8px;}
+
+/* Hint box */
+.hint-box{background:var(--bg-warm);border:0.5px solid var(--border);border-radius:8px;padding:14px 16px;font-size:12px;color:var(--ink-muted);line-height:1.7;margin-bottom:20px;}
+.hint-box strong{color:var(--ink-soft);}
+.hint-box code{background:var(--border);padding:1px 5px;border-radius:3px;font-size:11px;}
+
+footer{text-align:center;padding:22px 40px;border-top:0.5px solid var(--border);font-size:12px;color:var(--ink-muted);}
+footer a{color:var(--ink-muted);text-decoration:none;}
+@media(max-width:600px){nav{padding:12px 16px;}.nav-links{display:none;}.hero,.wrap{padding-left:16px;padding-right:16px;}.hero{padding-top:36px;}.lokasi-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">NFA <span>Family</span></a>
+  <div class="nav-links">
+    <a href="index.html">Beranda</a>
+    <a href="jurnal/index.html">Jurnal</a>
+    <a href="galeri/index.html">Galeri</a>
+    <a href="peta.html">Peta</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">Peta Perjalanan</div>
+  <h1>Jejak langkah<br>NFA Family 1448H</h1>
+  <p class="hero-sub">Jakarta · Muscat · Makkah · Madinah · Thaif · 24 Juni – 03 Juli 2026</p>
+</div>
+
+<div class="wrap">
+
+  <!-- Rute visual -->
+  <span class="sec-label">Rute perjalanan</span>
+  <div class="rute-wrap">
+    <div class="rute-kota"><div class="icon">🛫</div><div class="nama">Jakarta</div><div class="hari">H1</div></div>
+    <div class="rute-arrow">→</div>
+    <div class="rute-kota"><div class="icon">🕌</div><div class="nama">Muscat</div><div class="hari">H1–H2</div></div>
+    <div class="rute-arrow">→</div>
+    <div class="rute-kota"><div class="icon">☪</div><div class="nama">Thaif</div><div class="hari">H2 (Miqat)</div></div>
+    <div class="rute-arrow">→</div>
+    <div class="rute-kota"><div class="icon">🕋</div><div class="nama">Makkah</div><div class="hari">H2–H5</div></div>
+    <div class="rute-arrow">→</div>
+    <div class="rute-kota"><div class="icon">🌿</div><div class="nama">Madinah</div><div class="hari">H5–H8</div></div>
+    <div class="rute-arrow">→</div>
+    <div class="rute-kota"><div class="icon">🏔</div><div class="nama">Thaif</div><div class="hari">H8–H9</div></div>
+    <div class="rute-arrow">→</div>
+    <div class="rute-kota"><div class="icon">🏛</div><div class="nama">Muscat</div><div class="hari">H9 (Transit)</div></div>
+    <div class="rute-arrow">→</div>
+    <div class="rute-kota"><div class="icon">🏠</div><div class="nama">Jakarta</div><div class="hari">H10</div></div>
+  </div>
+
+  <!-- Peta keseluruhan rute -->
+  <span class="sec-label">Peta rute keseluruhan</span>
+  <div class="hint-box">
+    <strong>Cara isi peta Google Maps:</strong><br>
+    1. Buka <strong>Google Maps</strong> → cari lokasi yang ingin ditampilkan<br>
+    2. Klik <strong>Share</strong> → pilih <strong>Embed a map</strong><br>
+    3. Salin seluruh kode <code>&lt;iframe&gt;</code> dari Google Maps<br>
+    4. Atau gunakan <strong>Google My Maps</strong> (mymaps.google.com) untuk membuat peta dengan pin semua lokasi sekaligus, lalu embed<br>
+    5. Tempel <code>src="..."</code> dari iframe ke bagian yang sesuai di bawah
+  </div>
+
+  <!--
+    REKOMENDASI: Gunakan Google My Maps untuk peta rute lengkap.
+    Cara: mymaps.google.com → Buat peta baru → tambah pin tiap lokasi
+    → tambah rute antar kota → Share → Embed → salin src
+  -->
+  <div class="map-full">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=GANTI_DENGAN_EMBED_PETA_RUTE_LENGKAP"
+      allowfullscreen loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+  <div class="map-note">Peta rute perjalanan: Jakarta → Muscat → Makkah → Madinah → Thaif → Jakarta</div>
+
+  <!-- Lokasi per kota -->
+  <span class="sec-label">Lokasi per kota</span>
+  <div class="lokasi-grid">
+
+    <!-- MUSCAT -->
+    <div class="lokasi-card">
+      <iframe class="lokasi-map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.5!2d58.5922!3d23.6102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e91f86b48f48027%3A0x7b8a1571742e6c0a!2sSultan%20Qaboos%20Grand%20Mosque!5e0!3m2!1sid!2sid!4v1"
+        allowfullscreen loading="lazy"></iframe>
+      <div class="lokasi-body">
+        <div class="lokasi-title">Masjid Agung Sultan Qaboos</div>
+        <div class="lokasi-sub">Muscat, Oman</div>
+        <span class="lokasi-hari">H2 · 25 Juni</span>
+      </div>
+    </div>
+
+    <!-- MAKKAH - Masjidil Haram -->
+    <div class="lokasi-card">
+      <iframe class="lokasi-map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3714.5!2d39.8262!3d21.4225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c204b7b4d89a75%3A0x4f50d1d3a6d00d06!2sMasjidil%20Haram!5e0!3m2!1sid!2sid!4v1"
+        allowfullscreen loading="lazy"></iframe>
+      <div class="lokasi-body">
+        <div class="lokasi-title">Masjidil Haram</div>
+        <div class="lokasi-sub">Makkah Al-Mukarramah</div>
+        <span class="lokasi-hari">H2–H5 · 25–28 Juni</span>
+      </div>
+    </div>
+
+    <!-- MAKKAH - Jabal Nur -->
+    <div class="lokasi-card">
+      <iframe class="lokasi-map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3714.0!2d39.8578!3d21.4578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c21b2ded9e07ad%3A0x6b2e4d84eebecf89!2sJabal%20Al%20Nour!5e0!3m2!1sid!2sid!4v1"
+        allowfullscreen loading="lazy"></iframe>
+      <div class="lokasi-body">
+        <div class="lokasi-title">Jabal Nur – Gua Hira</div>
+        <div class="lokasi-sub">Makkah Al-Mukarramah</div>
+        <span class="lokasi-hari">H4 · 27 Juni</span>
+      </div>
+    </div>
+
+    <!-- ARAFAH -->
+    <div class="lokasi-card">
+      <iframe class="lokasi-map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3716.0!2d39.9842!3d21.3547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c21f4e9f3b3b3b%3A0x1234567890abcdef!2sArafat%20Mountain!5e0!3m2!1sid!2sid!4v1"
+        allowfullscreen loading="lazy"></iframe>
+      <div class="lokasi-body">
+        <div class="lokasi-title">Padang Arafah & Jabal Rahmah</div>
+        <div class="lokasi-sub">Makkah Al-Mukarramah</div>
+        <span class="lokasi-hari">H4 · 27 Juni</span>
+      </div>
+    </div>
+
+    <!-- MADINAH - Masjid Nabawi -->
+    <div class="lokasi-card">
+      <iframe class="lokasi-map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.0!2d39.6136!3d24.4672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15bdbf33b8a65e77%3A0xf4f5a4573d9e5fd2!2sMasjid%20Nabawi!5e0!3m2!1sid!2sid!4v1"
+        allowfullscreen loading="lazy"></iframe>
+      <div class="lokasi-body">
+        <div class="lokasi-title">Masjid Nabawi</div>
+        <div class="lokasi-sub">Madinah Al-Munawwarah</div>
+        <span class="lokasi-hari">H5–H8 · 28 Jun–1 Jul</span>
+      </div>
+    </div>
+
+    <!-- MADINAH - Jabal Uhud -->
+    <div class="lokasi-card">
+      <iframe class="lokasi-map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.0!2d39.6150!3d24.5100!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15bdbff4a57b6a0b%3A0x79a89e6bb23a3c6b!2sMount%20Uhud!5e0!3m2!1sid!2sid!4v1"
+        allowfullscreen loading="lazy"></iframe>
+      <div class="lokasi-body">
+        <div class="lokasi-title">Jabal Uhud</div>
+        <div class="lokasi-sub">Madinah Al-Munawwarah</div>
+        <span class="lokasi-hari">H7 · 30 Juni</span>
+      </div>
+    </div>
+
+    <!-- MADINAH - Masjid Quba -->
+    <div class="lokasi-card">
+      <iframe class="lokasi-map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.0!2d39.6178!3d24.4408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15bdbf6498a0d3b7%3A0xa5a2d05ea6d04b94!2sMasjid%20Quba!5e0!3m2!1sid!2sid!4v1"
+        allowfullscreen loading="lazy"></iframe>
+      <div class="lokasi-body">
+        <div class="lokasi-title">Masjid Quba</div>
+        <div class="lokasi-sub">Madinah Al-Munawwarah</div>
+        <span class="lokasi-hari">H7 · 30 Juni</span>
+      </div>
+    </div>
+
+    <!-- THAIF -->
+    <div class="lokasi-card">
+      <iframe class="lokasi-map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3728.0!2d40.4168!3d21.2854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15e97ef58c4b97d3%3A0x87e31d3a8be01fd7!2sTa'if!5e0!3m2!1sid!2sid!4v1"
+        allowfullscreen loading="lazy"></iframe>
+      <div class="lokasi-body">
+        <div class="lokasi-title">Kota Thaif</div>
+        <div class="lokasi-sub">Arab Saudi</div>
+        <span class="lokasi-hari">H8–H9 · 1–2 Juli</span>
+      </div>
+    </div>
+
+  </div><!-- /lokasi-grid -->
+
+</div><!-- /wrap -->
+
+<footer>
+  <p>NFA Family · Umroh 1448H / 2026 &nbsp;·&nbsp; <a href="index.html">Beranda</a> &nbsp;·&nbsp; <a href="jurnal/index.html">Jurnal</a> &nbsp;·&nbsp; <a href="galeri/index.html">Galeri</a></p>
+  <p style="margin-top:5px;font-size:11px;opacity:0.55;">Perjalanan bersama Alviandra Edu Wisata · Izin Umroh No. 16032300311480002</p>
+</footer>
+
+</body>
+</html>
