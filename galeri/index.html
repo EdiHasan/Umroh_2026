@@ -1,1 +1,375 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galeri Foto – NFA Family Umroh 1448H</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A84C;--gold-light:#F5EBCA;--ink:#1A1814;--ink-soft:#4A4640;--ink-muted:#8A857E;--bg:#FAFAF7;--bg-warm:#F5F2EA;--border:#E8E3D8;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 40px;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;}
+.nav-brand{font-family:'Lora',serif;font-size:15px;color:var(--ink);text-decoration:none;}
+.nav-brand span{color:var(--gold);}
+.nav-links{display:flex;gap:24px;}
+.nav-links a{font-size:13px;color:var(--ink-muted);text-decoration:none;}
+.nav-links a:hover{color:var(--ink);}
+.hero{padding:60px 40px 40px;max-width:860px;margin:0 auto;}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.hero h1{font-family:'Lora',serif;font-size:clamp(26px,5vw,40px);font-weight:600;line-height:1.2;margin-bottom:12px;}
+.hero-sub{font-size:14px;color:var(--ink-muted);}
+.wrap{max-width:860px;margin:0 auto;padding:0 40px 80px;}
+.sec-label{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin:44px 0 16px;display:block;}
 
+/* Filter tabs */
+.filter-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;}
+.filter-btn{font-size:12px;font-weight:500;padding:6px 14px;border-radius:20px;border:0.5px solid var(--border);background:var(--bg);color:var(--ink-muted);cursor:pointer;transition:all .15s;}
+.filter-btn:hover{border-color:#C8C3B8;color:var(--ink);}
+.filter-btn.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+
+/* Kota section */
+.kota-section{margin-bottom:48px;}
+.kota-header{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:12px;border-bottom:0.5px solid var(--border);}
+.kota-icon{font-size:20px;}
+.kota-name{font-size:16px;font-weight:500;color:var(--ink);}
+.kota-days{font-size:12px;color:var(--ink-muted);}
+
+/* Photo grid */
+.photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;}
+.photo-grid.large{grid-template-columns:repeat(auto-fill,minmax(260px,1fr));}
+
+.photo-item{border-radius:10px;overflow:hidden;background:var(--bg-warm);border:0.5px solid var(--border);position:relative;}
+.photo-item a{display:block;}
+.photo-item img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .35s ease;}
+.photo-item:hover img{transform:scale(1.04);}
+.photo-cap{padding:8px 10px;font-size:11px;color:var(--ink-muted);}
+
+/* Placeholder photo */
+.photo-ph{aspect-ratio:4/3;background:var(--bg-warm);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--ink-muted);}
+.photo-ph .ph-icon{font-size:22px;opacity:0.35;}
+.photo-ph .ph-text{font-size:11px;}
+
+/* Hint box */
+.hint-box{background:var(--bg-warm);border:0.5px solid var(--border);border-radius:8px;padding:14px 16px;font-size:12px;color:var(--ink-muted);line-height:1.7;margin-bottom:20px;}
+.hint-box strong{color:var(--ink-soft);}
+.hint-box code{background:var(--border);padding:1px 5px;border-radius:3px;font-size:11px;}
+
+/* Video grid */
+.video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-bottom:8px;}
+.video-item{border-radius:10px;overflow:hidden;border:0.5px solid var(--border);}
+.video-wrap{aspect-ratio:16/9;}
+.video-wrap iframe{width:100%;height:100%;border:none;display:block;}
+.video-cap{padding:8px 10px;font-size:11px;color:var(--ink-muted);background:var(--bg-warm);}
+
+footer{text-align:center;padding:22px 40px;border-top:0.5px solid var(--border);font-size:12px;color:var(--ink-muted);}
+footer a{color:var(--ink-muted);text-decoration:none;}
+@media(max-width:600px){nav{padding:12px 16px;}.nav-links{display:none;}.hero,.wrap{padding-left:16px;padding-right:16px;}.hero{padding-top:36px;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="../index.html">NFA <span>Family</span></a>
+  <div class="nav-links">
+    <a href="../index.html">Beranda</a>
+    <a href="../jurnal/index.html">Jurnal</a>
+    <a href="index.html">Galeri</a>
+    <a href="../peta.html">Peta</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">Galeri Foto & Video</div>
+  <h1>Momen perjalanan<br>NFA Family 1448H</h1>
+  <p class="hero-sub">24 Juni – 03 Juli 2026 · Jakarta · Muscat · Makkah · Madinah · Thaif</p>
+</div>
+
+<div class="wrap">
+
+  <!-- Filter -->
+  <div class="filter-row">
+    <button class="filter-btn active" onclick="filterKota('semua', this)">Semua</button>
+    <button class="filter-btn" onclick="filterKota('muscat', this)">Muscat</button>
+    <button class="filter-btn" onclick="filterKota('makkah', this)">Makkah</button>
+    <button class="filter-btn" onclick="filterKota('madinah', this)">Madinah</button>
+    <button class="filter-btn" onclick="filterKota('thaif', this)">Thaif</button>
+    <button class="filter-btn" onclick="filterKota('video', this)">Video</button>
+  </div>
+
+  <div class="hint-box">
+    <strong>Cara isi foto dari Google Drive:</strong><br>
+    1. Upload foto ke Google Drive → klik kanan → Share → <em>Anyone with link</em><br>
+    2. Ambil <strong>FILE_ID</strong> dari URL: <code>drive.google.com/file/d/<strong>FILE_ID</strong>/view</code><br>
+    3. Tempel di <code>src="https://drive.google.com/uc?export=view&amp;id=FILE_ID"</code><br>
+    4. Untuk link buka foto: tempel link Google Photos di <code>href="..."</code><br>
+    <strong>Cara isi video YouTube:</strong> Upload → Share → Embed → ambil <strong>VIDEO_ID</strong> → tempel di <code>src="https://www.youtube.com/embed/VIDEO_ID"</code>
+  </div>
+
+  <!-- ═══ MUSCAT ═══ -->
+  <div class="kota-section" data-kota="muscat">
+    <div class="kota-header">
+      <span class="kota-icon">🕌</span>
+      <div>
+        <div class="kota-name">Muscat, Oman</div>
+        <div class="kota-days">H1 & H2 · 24–25 Juni 2026</div>
+      </div>
+    </div>
+    <div class="photo-grid">
+
+      <div class="photo-item">
+        <a href="https://photos.app.goo.gl/LINK_MUSCAT_1" target="_blank" rel="noopener">
+          <img src="https://drive.google.com/uc?export=view&id=FILE_ID_MUSCAT_1" alt="Masjid Sultan Qaboos" loading="lazy">
+        </a>
+        <div class="photo-cap">Masjid Agung Sultan Qaboos</div>
+      </div>
+
+      <div class="photo-item">
+        <a href="https://photos.app.goo.gl/LINK_MUSCAT_2" target="_blank" rel="noopener">
+          <img src="https://drive.google.com/uc?export=view&id=FILE_ID_MUSCAT_2" alt="Matrah Souq" loading="lazy">
+        </a>
+        <div class="photo-cap">Matrah Souq</div>
+      </div>
+
+      <div class="photo-item">
+        <a href="https://photos.app.goo.gl/LINK_MUSCAT_3" target="_blank" rel="noopener">
+          <img src="https://drive.google.com/uc?export=view&id=FILE_ID_MUSCAT_3" alt="Bandara Muscat" loading="lazy">
+        </a>
+        <div class="photo-cap">Bandara Internasional Muscat</div>
+      </div>
+
+      <!-- Tambah foto Muscat: duplikasi blok .photo-item di atas -->
+
+    </div>
+  </div>
+
+  <!-- ═══ MAKKAH ═══ -->
+  <div class="kota-section" data-kota="makkah">
+    <div class="kota-header">
+      <span class="kota-icon">🕋</span>
+      <div>
+        <div class="kota-name">Makkah Al-Mukarramah</div>
+        <div class="kota-days">H2–H5 · 25–28 Juni 2026 · 2 Umroh</div>
+      </div>
+    </div>
+    <div class="photo-grid">
+
+      <div class="photo-item">
+        <a href="https://photos.app.goo.gl/LINK_MAKKAH_1" target="_blank" rel="noopener">
+          <img src="https://drive.google.com/uc?export=view&id=FILE_ID_MAKKAH_1" alt="Ka'bah" loading="lazy">
+        </a>
+        <div class="photo-cap">Ka'bah · Masjidil Haram</div>
+      </div>
+
+      <div class="photo-item">
+        <a href="https://photos.app.goo.gl/LINK_MAKKAH_2" target="_blank" rel="noopener">
+          <img src="https://drive.google.com/uc?export=view&id=FILE_ID_MAKKAH_2" alt="Tawaf" loading="lazy">
+        </a>
+        <div class="photo-cap">Tawaf Umroh ke-1</div>
+      </div>
+
+      <div class="photo-item">
+        <a href="https://photos.app.goo.gl/LINK_MAKKAH_3" target="_blank" rel="noopener">
+          <img src="https://drive.google.com/uc?export=view&id=FILE_ID_MAKKAH_3" alt="Jabal Nur" loading="lazy">
+        </a>
+        <div class="photo-cap">Jabal Nur – Gua Hira</div>
+      </div>
+
+      <div class="photo-item">
+        <a href="https://photos.app.goo.gl/LINK_MAKKAH_4" target="_blank" rel="noopener">
+          <img src="https://drive.google.com/uc?export=view&id=FILE_ID_MAKKAH_4" alt="Jabal Rahmah" loading="lazy">
+        </a>
+        <div class="photo-cap">Jabal Rahmah · Arafah</div>
+      </div>
+
+      <div class="photo-item">
+        <a href="https://photos.app.goo.gl/LINK_MAKKAH_5" target="_blank" rel="noopener">
+          <img src="https://drive.google.com/uc?export=view&id=FILE_ID_MAKKAH_5" alt="Jabal Tsur" loading="lazy">
+        </a>
+        <div class="photo-cap">Jabal Tsur</div>
+      </div>
+
+      <div class="photo-item">
+        <a href="https://photos.app.goo.gl/LINK_MAKKAH_6" target="_blank" rel="noopener">
+          <img src="https://drive.google.com/uc?export=view&id=FILE_ID_MAKKAH_6" alt="Masjid Aisyah" loading="lazy">
+        </a>
+        <div class="photo-cap">Masjid Aisyah – Miqat Umroh ke-2</div>
+      </div>
+
+      <!-- Tambah foto Makkah: duplikasi blok .photo-item di atas -->
+
+    </div>
+  </div>
+
+  <!-- ═══ MADINAH ═══ -->
+  <div class="kota-section" data-kota="madinah">
+    <div class="kota-header">
+      <span class="kota-icon">🌿</span>
+      <div>
+        <div class="kota-name">Madinah Al-Munawwarah</div>
+        <div class="kota-days">H5–H8 · 28 Juni – 1 Juli 2026</div>
+      </div>
+    </div>
+    <div class="photo-grid">
+
+      <div class="photo-item">
+        <a href="https://photos.app.goo.gl/LINK_MADINAH_1" target="_blank" rel="noopener">
+          <img src="https://drive.google.com/uc?export=view&id=FILE_ID_MADINAH_1" alt="Masjid Nabawi" loading="lazy">
+        </a>
+        <div class="photo-cap">Masjid Nabawi</div>
+      </div>
+
+      <div class="photo-item">
+        <a href="https://photos.app.goo.gl/LINK_MADINAH_2" target="_blank" rel="noopener">
+          <img src="https://drive.google.com/uc?export=view&id=FILE_ID_MADINAH_2" alt="Raudhah" loading="lazy">
+        </a>
+        <div class="photo-cap">Area Raudhah</div>
+      </div>
+
+      <div class="photo-item">
+        <a href="https://photos.app.goo.gl/LINK_MADINAH_3" target="_blank" rel="noopener">
+          <img src="https://drive.google.com/uc?export=view&id=FILE_ID_MADINAH_3" alt="Masjid Quba" loading="lazy">
+        </a>
+        <div class="photo-cap">Masjid Quba</div>
+      </div>
+
+      <div class="photo-item">
+        <a href="https://photos.app.goo.gl/LINK_MADINAH_4" target="_blank" rel="noopener">
+          <img src="https://drive.google.com/uc?export=view&id=FILE_ID_MADINAH_4" alt="Jabal Uhud" loading="lazy">
+        </a>
+        <div class="photo-cap">Jabal Uhud</div>
+      </div>
+
+      <div class="photo-item">
+        <a href="https://photos.app.goo.gl/LINK_MADINAH_5" target="_blank" rel="noopener">
+          <img src="https://drive.google.com/uc?export=view&id=FILE_ID_MADINAH_5" alt="Kebun Kurma" loading="lazy">
+        </a>
+        <div class="photo-cap">Kebun Kurma Madinah</div>
+      </div>
+
+      <div class="photo-item">
+        <a href="https://photos.app.goo.gl/LINK_MADINAH_6" target="_blank" rel="noopener">
+          <img src="https://drive.google.com/uc?export=view&id=FILE_ID_MADINAH_6" alt="Masjid Kiblatain" loading="lazy">
+        </a>
+        <div class="photo-cap">Masjid Kiblatain</div>
+      </div>
+
+      <!-- Tambah foto Madinah: duplikasi blok .photo-item di atas -->
+
+    </div>
+  </div>
+
+  <!-- ═══ THAIF ═══ -->
+  <div class="kota-section" data-kota="thaif">
+    <div class="kota-header">
+      <span class="kota-icon">🏔</span>
+      <div>
+        <div class="kota-name">Thaif</div>
+        <div class="kota-days">H8–H9 · 1–2 Juli 2026</div>
+      </div>
+    </div>
+    <div class="photo-grid">
+
+      <div class="photo-item">
+        <a href="https://photos.app.goo.gl/LINK_THAIF_1" target="_blank" rel="noopener">
+          <img src="https://drive.google.com/uc?export=view&id=FILE_ID_THAIF_1" alt="Telefrik Thaif" loading="lazy">
+        </a>
+        <div class="photo-cap">Kereta Gantung Telefrik</div>
+      </div>
+
+      <div class="photo-item">
+        <a href="https://photos.app.goo.gl/LINK_THAIF_2" target="_blank" rel="noopener">
+          <img src="https://drive.google.com/uc?export=view&id=FILE_ID_THAIF_2" alt="Kota Thaif" loading="lazy">
+        </a>
+        <div class="photo-cap">Pemandangan Kota Thaif</div>
+      </div>
+
+      <div class="photo-item">
+        <a href="https://photos.app.goo.gl/LINK_THAIF_3" target="_blank" rel="noopener">
+          <img src="https://drive.google.com/uc?export=view&id=FILE_ID_THAIF_3" alt="Masjid Qornul Manaziel" loading="lazy">
+        </a>
+        <div class="photo-cap">Masjid Qornul Manaziel – Miqat</div>
+      </div>
+
+      <!-- Tambah foto Thaif: duplikasi blok .photo-item di atas -->
+
+    </div>
+  </div>
+
+  <!-- ═══ VIDEO ═══ -->
+  <div class="kota-section" data-kota="video">
+    <div class="kota-header">
+      <span class="kota-icon">🎬</span>
+      <div>
+        <div class="kota-name">Video Perjalanan</div>
+        <div class="kota-days">Upload ke YouTube → Unlisted → tempel VIDEO_ID di bawah</div>
+      </div>
+    </div>
+    <div class="video-grid">
+
+      <div class="video-item">
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID_1"
+            title="Umroh ke-1 NFA Family"
+            allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div class="video-cap">Umroh Pertama · Makkah, 25 Juni 2026</div>
+      </div>
+
+      <div class="video-item">
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID_2"
+            title="Raudhah NFA Family"
+            allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div class="video-cap">Ziarah Raudhah · Madinah, 29 Juni 2026</div>
+      </div>
+
+      <div class="video-item">
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID_3"
+            title="City Tour Madinah NFA Family"
+            allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div class="video-cap">City Tour Madinah · 30 Juni 2026</div>
+      </div>
+
+      <div class="video-item">
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID_4"
+            title="Telefrik Thaif NFA Family"
+            allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div class="video-cap">Telefrik Thaif · 2 Juli 2026</div>
+      </div>
+
+      <!-- Tambah video: duplikasi blok .video-item di atas -->
+
+    </div>
+  </div>
+
+</div><!-- /wrap -->
+
+<footer>
+  <p>NFA Family · Umroh 1448H / 2026 &nbsp;·&nbsp; <a href="../index.html">Beranda</a> &nbsp;·&nbsp; <a href="../jurnal/index.html">Jurnal</a></p>
+  <p style="margin-top:5px;font-size:11px;opacity:0.55;">Perjalanan bersama Alviandra Edu Wisata · Izin Umroh No. 16032300311480002</p>
+</footer>
+
+<script>
+function filterKota(kota, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.kota-section').forEach(s => {
+    if (kota === 'semua') { s.style.display = ''; return; }
+    s.style.display = (s.dataset.kota === kota) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>
