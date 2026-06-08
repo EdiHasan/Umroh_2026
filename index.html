@@ -4,350 +4,123 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Itinerary Umroh – PT. Alviandra Edu Wisata</title>
+<meta property="og:title" content="Itinerary Umroh 1448H / 2026 – PT. Alviandra Edu Wisata" />
+<meta property="og:description" content="Jadwal perjalanan umroh 24 Juni – 03 Juli 2026. Jakarta · Oman · Makkah · Madinah · Oman · Jakarta." />
+<meta property="og:type" content="website" />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --gold: #C89B3C;
-    --gold-light: #F0D080;
-    --gold-pale: #FDF6E3;
-    --dark: #1A1209;
-    --dark-mid: #2E2010;
-    --brown: #5C3D11;
-    --cream: #FAF4E8;
-    --white: #FFFFFF;
-    --green: #1B6B3A;
-    --green-light: #E8F5EE;
-    --orange: #D4631A;
-    --orange-light: #FEF0E6;
-    --blue: #1A4B8C;
-    --blue-light: #E8F0FB;
-    --purple: #5A2D82;
-    --purple-light: #F2EAFA;
-  }
+:root {
+  --gold:#C89B3C;--gold-light:#F0D080;--gold-pale:#FDF6E3;
+  --dark:#1A1209;--dark-mid:#2E2010;--brown:#5C3D11;--cream:#FAF4E8;
+  --white:#FFFFFF;--green:#1B6B3A;--green-light:#E8F5EE;
+  --orange:#D4631A;--orange-light:#FEF0E6;--blue:#1A4B8C;
+  --blue-light:#E8F0FB;--purple:#5A2D82;--purple-light:#F2EAFA;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--cream);font-family:'DM Sans',sans-serif;color:var(--dark);min-height:100vh;}
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+/* ── HEADER ── */
+.header{background:linear-gradient(135deg,var(--dark) 0%,var(--dark-mid) 60%,var(--brown) 100%);padding:32px 24px 24px;text-align:center;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(200,155,60,0.18) 0%,transparent 70%);}
+.header-badge{display:inline-block;background:var(--gold);color:var(--dark);font-weight:600;font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:4px 16px;border-radius:2px;margin-bottom:12px;}
+.header h1{font-family:'Playfair Display',serif;font-size:clamp(20px,5vw,34px);font-weight:900;color:var(--white);line-height:1.15;margin-bottom:6px;position:relative;}
+.header h1 span{color:var(--gold-light);}
+.header .route{font-size:12px;color:rgba(255,255,255,0.6);letter-spacing:1.5px;margin-bottom:6px;font-weight:300;}
+.header .dates-badge{display:inline-block;border:1px solid rgba(200,155,60,0.5);color:var(--gold-light);padding:5px 18px;font-size:13px;font-weight:500;border-radius:40px;margin-top:8px;}
 
-  body {
-    background: var(--cream);
-    font-family: 'DM Sans', sans-serif;
-    color: var(--dark);
-    min-height: 100vh;
-  }
+/* ── STATS ── */
+.stats{display:flex;justify-content:center;background:var(--dark-mid);border-bottom:2px solid var(--gold);}
+.stat{flex:1;max-width:160px;text-align:center;padding:12px 8px;border-right:1px solid rgba(200,155,60,0.2);}
+.stat:last-child{border-right:none;}
+.stat-num{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--gold-light);display:block;}
+.stat-label{font-size:10px;color:rgba(255,255,255,0.5);letter-spacing:1.5px;text-transform:uppercase;}
 
-  .header {
-    background: linear-gradient(135deg, var(--dark) 0%, var(--dark-mid) 60%, var(--brown) 100%);
-    padding: 40px 24px 32px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
+/* ── DAY NAV GRID ── */
+.day-nav-wrap{background:var(--dark);padding:14px 12px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.35);}
+.day-nav{display:grid;grid-template-columns:repeat(10,1fr);gap:5px;max-width:980px;margin:0 auto;}
+.day-btn{background:rgba(255,255,255,0.06);border:1px solid rgba(200,155,60,0.2);border-radius:8px 8px 0 0;padding:7px 4px 10px;cursor:pointer;text-align:center;transition:all .18s;position:relative;bottom:-1px;}
+.day-btn:hover{background:rgba(200,155,60,0.15);border-color:rgba(200,155,60,0.5);}
+.day-btn.active{background:var(--cream);border-color:var(--gold);border-bottom-color:var(--cream);}
+.day-btn-num{display:block;font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--gold-light);line-height:1;}
+.day-btn.active .day-btn-num{color:var(--brown);}
+.day-btn-date{display:block;font-size:9px;color:rgba(255,255,255,0.4);margin-top:2px;letter-spacing:0.5px;}
+.day-btn.active .day-btn-date{color:var(--brown);opacity:0.7;}
+.day-nav-border{height:3px;background:var(--gold);max-width:980px;margin:0 auto;}
 
-  .header::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 50% 0%, rgba(200,155,60,0.18) 0%, transparent 70%);
-  }
+/* ── CONTENT ── */
+.content{max-width:980px;margin:0 auto;padding:20px 14px 48px;}
 
-  .header-badge {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--dark);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 600;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    padding: 5px 18px;
-    border-radius: 2px;
-    margin-bottom: 16px;
-  }
+/* ── DAY PANEL ── */
+.day-panel{display:none;}
+.day-panel.active{display:block;}
 
-  .header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(22px, 5vw, 38px);
-    font-weight: 900;
-    color: var(--white);
-    line-height: 1.15;
-    margin-bottom: 8px;
-    position: relative;
-  }
+/* ── DAY CARD ── */
+.day-card{border-radius:12px;overflow:hidden;box-shadow:0 2px 16px rgba(26,18,9,0.09);margin-bottom:16px;}
+.day-card-header{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--dark);}
+.day-circle{background:var(--gold);color:var(--dark);font-family:'Playfair Display',serif;font-size:13px;font-weight:700;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.day-info{flex:1;}
+.day-date-text{font-size:15px;font-weight:600;color:var(--white);line-height:1.2;}
+.day-subtitle{font-size:11px;color:var(--gold-light);text-transform:uppercase;letter-spacing:2px;margin-top:2px;}
+.day-pill{background:rgba(200,155,60,0.18);border:1px solid rgba(200,155,60,0.35);color:var(--gold-light);font-size:11px;font-weight:500;padding:4px 12px;border-radius:20px;white-space:nowrap;}
 
-  .header h1 span { color: var(--gold-light); }
+/* ── TABLE ── */
+.schedule-table{width:100%;border-collapse:collapse;background:var(--white);}
+.schedule-table thead tr{background:var(--gold-pale);border-bottom:2px solid var(--gold);}
+.schedule-table thead th{padding:9px 13px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--brown);text-align:left;}
+.col-time{width:100px;}.col-zone{width:78px;}.col-type{width:128px;}
+.schedule-table tbody tr{border-bottom:1px solid rgba(200,155,60,0.12);transition:background .15s;}
+.schedule-table tbody tr:last-child{border-bottom:none;}
+.schedule-table tbody tr:hover{background:var(--gold-pale);}
+.schedule-table td{padding:10px 13px;vertical-align:middle;font-size:13px;line-height:1.5;}
+.time-cell{font-weight:700;font-size:13px;color:var(--brown);white-space:nowrap;}
+.time-exact{font-weight:700;font-size:14px;color:var(--dark);}
+.time-zone{font-size:10px;font-weight:500;color:#999;display:block;margin-top:1px;}
+.time-approx{font-size:10px;color:#bbb;font-style:italic;display:block;}
+.type-badge{display:inline-block;font-size:10px;font-weight:600;padding:3px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:1px;white-space:nowrap;}
+.type-flight{background:var(--blue-light);color:var(--blue);}
+.type-ibadah{background:var(--green-light);color:var(--green);}
+.type-ziarah{background:var(--orange-light);color:var(--orange);}
+.type-transfer{background:#EEE;color:#555;}
+.type-hotel{background:var(--purple-light);color:var(--purple);}
+.type-tour{background:#FFF0CC;color:#7A5500;}
+.activity-main{font-weight:500;color:var(--dark);font-size:13px;}
+.activity-note{font-size:12px;color:#777;margin-top:3px;}
 
-  .header .route {
-    font-size: 13px;
-    color: rgba(255,255,255,0.65);
-    letter-spacing: 1.5px;
-    margin-bottom: 6px;
-    font-weight: 300;
-  }
+/* ── LEGEND + NOTE ── */
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;padding:12px 16px;background:var(--white);border-radius:10px;border:1px solid rgba(200,155,60,0.2);}
+.legend-title{font-size:11px;font-weight:600;color:var(--brown);text-transform:uppercase;letter-spacing:1.5px;width:100%;margin-bottom:3px;}
+.note-bar{background:#fffbe6;border-left:3px solid var(--gold);padding:8px 13px;font-size:12px;color:#7a5500;margin-bottom:16px;border-radius:0 6px 6px 0;}
 
-  .header .dates-badge {
-    display: inline-block;
-    border: 1px solid rgba(200,155,60,0.5);
-    color: var(--gold-light);
-    padding: 6px 20px;
-    font-size: 13px;
-    font-weight: 500;
-    border-radius: 40px;
-    margin-top: 10px;
-    letter-spacing: 0.5px;
-  }
+/* ── DAY NAV BOTTOM ── */
+.day-nav-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:20px;gap:10px;}
+.nav-arrow{display:flex;align-items:center;gap:6px;background:var(--dark);color:var(--gold-light);border:1px solid rgba(200,155,60,0.3);border-radius:8px;padding:9px 16px;font-size:13px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .15s;}
+.nav-arrow:hover{background:var(--dark-mid);border-color:var(--gold);}
+.nav-arrow:disabled{opacity:0.3;cursor:default;}
+.nav-center-info{text-align:center;font-size:12px;color:var(--brown);font-weight:500;}
+.nav-center-info span{display:block;font-size:10px;color:#aaa;margin-top:2px;}
 
-  .stats {
-    display: flex;
-    justify-content: center;
-    gap: 0;
-    background: var(--dark-mid);
-    border-bottom: 2px solid var(--gold);
-  }
+/* ── FOOTER ── */
+.footer{background:var(--dark);color:rgba(255,255,255,0.55);text-align:center;font-size:12px;padding:18px;letter-spacing:0.5px;}
+.footer strong{color:var(--gold-light);}
 
-  .stat {
-    flex: 1;
-    max-width: 160px;
-    text-align: center;
-    padding: 14px 8px;
-    border-right: 1px solid rgba(200,155,60,0.2);
-  }
-
-  .stat:last-child { border-right: none; }
-
-  .stat-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--gold-light);
-    display: block;
-  }
-
-  .stat-label {
-    font-size: 10px;
-    color: rgba(255,255,255,0.5);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-  }
-
-  .content {
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 28px 16px 48px;
-  }
-
-  .day-block {
-    margin-bottom: 24px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 16px rgba(26,18,9,0.09);
-  }
-
-  .day-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 14px 20px;
-    background: var(--dark);
-  }
-
-  .day-number {
-    background: var(--gold);
-    color: var(--dark);
-    font-family: 'Playfair Display', serif;
-    font-size: 13px;
-    font-weight: 700;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .day-info { flex: 1; }
-
-  .day-date {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--white);
-    line-height: 1.2;
-  }
-
-  .day-title {
-    font-size: 11px;
-    color: var(--gold-light);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 2px;
-  }
-
-  .day-location-pill {
-    background: rgba(200,155,60,0.18);
-    border: 1px solid rgba(200,155,60,0.35);
-    color: var(--gold-light);
-    font-size: 11px;
-    font-weight: 500;
-    padding: 4px 12px;
-    border-radius: 20px;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-  }
-
-  .schedule-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--white);
-  }
-
-  .schedule-table thead tr {
-    background: var(--gold-pale);
-    border-bottom: 2px solid var(--gold);
-  }
-
-  .schedule-table thead th {
-    padding: 10px 14px;
-    font-size: 10px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--brown);
-    text-align: left;
-  }
-
-  .schedule-table thead th.col-time  { width: 100px; }
-  .schedule-table thead th.col-zone  { width: 80px; }
-  .schedule-table thead th.col-type  { width: 130px; }
-
-  .schedule-table tbody tr {
-    border-bottom: 1px solid rgba(200,155,60,0.12);
-    transition: background 0.15s;
-  }
-
-  .schedule-table tbody tr:last-child { border-bottom: none; }
-  .schedule-table tbody tr:hover { background: var(--gold-pale); }
-
-  .schedule-table td {
-    padding: 11px 14px;
-    vertical-align: middle;
-    font-size: 13.5px;
-    line-height: 1.5;
-  }
-
-  /* time cell */
-  .time-cell {
-    font-weight: 700;
-    font-size: 14px;
-    color: var(--brown);
-    white-space: nowrap;
-  }
-
-  .time-exact {
-    font-weight: 700;
-    font-size: 15px;
-    color: var(--dark);
-  }
-
-  .time-zone {
-    font-size: 10px;
-    font-weight: 500;
-    color: #999;
-    display: block;
-    margin-top: 1px;
-  }
-
-  .time-approx {
-    font-size: 10px;
-    color: #bbb;
-    font-style: italic;
-    display: block;
-  }
-
-  /* badge */
-  .type-badge {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 600;
-    padding: 3px 9px;
-    border-radius: 4px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    white-space: nowrap;
-  }
-
-  .type-flight   { background: var(--blue-light);   color: var(--blue);   }
-  .type-ibadah   { background: var(--green-light);  color: var(--green);  }
-  .type-ziarah   { background: var(--orange-light); color: var(--orange); }
-  .type-transfer { background: #EEE;                color: #555;          }
-  .type-hotel    { background: var(--purple-light); color: var(--purple); }
-  .type-tour     { background: #FFF0CC;             color: #7A5500;       }
-
-  .activity-main {
-    font-weight: 500;
-    color: var(--dark);
-    font-size: 13.5px;
-  }
-
-  .activity-note {
-    font-size: 12px;
-    color: #777;
-    margin-top: 3px;
-  }
-
-  /* legend */
-  .legend {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 24px;
-    padding: 14px 18px;
-    background: var(--white);
-    border-radius: 10px;
-    border: 1px solid rgba(200,155,60,0.2);
-  }
-
-  .legend-title {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--brown);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    width: 100%;
-    margin-bottom: 4px;
-  }
-
-  /* catatan waktu estimasi */
-  .note-bar {
-    background: #fffbe6;
-    border-left: 3px solid var(--gold);
-    padding: 9px 14px;
-    font-size: 12px;
-    color: #7a5500;
-    margin-bottom: 20px;
-    border-radius: 0 6px 6px 0;
-  }
-
-  .footer {
-    background: var(--dark);
-    color: rgba(255,255,255,0.55);
-    text-align: center;
-    font-size: 12px;
-    padding: 18px;
-    letter-spacing: 0.5px;
-  }
-
-  .footer strong { color: var(--gold-light); }
-
-  @media (max-width: 600px) {
-    .schedule-table thead th.col-zone,
-    .schedule-table td:nth-child(2) { display: none; }
-    .stats { flex-wrap: wrap; }
-    .stat { min-width: 80px; }
-    .day-location-pill { display: none; }
-  }
+/* ── MOBILE ── */
+@media(max-width:640px){
+  .day-nav{grid-template-columns:repeat(5,1fr);}
+  .day-btn-date{display:none;}
+  .col-zone,.schedule-table td:nth-child(2){display:none;}
+  .day-pill{display:none;}
+  .stats{flex-wrap:wrap;}
+  .stat{min-width:80px;}
+}
+@media(max-width:380px){
+  .day-nav{grid-template-columns:repeat(5,1fr);gap:3px;}
+  .day-btn-num{font-size:12px;}
+}
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <div class="header">
   <div class="header-badge">PT. Alviandra Edu Wisata</div>
   <h1>Itinerary <span>Umroh</span><br>1448 H / 2026 M</h1>
@@ -355,6 +128,7 @@
   <div class="dates-badge">24 Juni – 03 Juli 2026 &nbsp;|&nbsp; 10 Hari 9 Malam</div>
 </div>
 
+<!-- STATS -->
 <div class="stats">
   <div class="stat"><span class="stat-num">10</span><span class="stat-label">Hari</span></div>
   <div class="stat"><span class="stat-num">2</span><span class="stat-label">Umroh</span></div>
@@ -362,8 +136,27 @@
   <div class="stat"><span class="stat-num">WY</span><span class="stat-label">Oman Air</span></div>
 </div>
 
+<!-- DAY NAV TABS -->
+<div class="day-nav-wrap">
+  <div class="day-nav">
+    <button class="day-btn active"    onclick="showDay(1)"  id="btn1"><span class="day-btn-num">H1</span><span class="day-btn-date">24 Jun</span></button>
+    <button class="day-btn"           onclick="showDay(2)"  id="btn2"><span class="day-btn-num">H2</span><span class="day-btn-date">25 Jun</span></button>
+    <button class="day-btn"           onclick="showDay(3)"  id="btn3"><span class="day-btn-num">H3</span><span class="day-btn-date">26 Jun</span></button>
+    <button class="day-btn"           onclick="showDay(4)"  id="btn4"><span class="day-btn-num">H4</span><span class="day-btn-date">27 Jun</span></button>
+    <button class="day-btn"           onclick="showDay(5)"  id="btn5"><span class="day-btn-num">H5</span><span class="day-btn-date">28 Jun</span></button>
+    <button class="day-btn"           onclick="showDay(6)"  id="btn6"><span class="day-btn-num">H6</span><span class="day-btn-date">29 Jun</span></button>
+    <button class="day-btn"           onclick="showDay(7)"  id="btn7"><span class="day-btn-num">H7</span><span class="day-btn-date">30 Jun</span></button>
+    <button class="day-btn"           onclick="showDay(8)"  id="btn8"><span class="day-btn-num">H8</span><span class="day-btn-date">01 Jul</span></button>
+    <button class="day-btn"           onclick="showDay(9)"  id="btn9"><span class="day-btn-num">H9</span><span class="day-btn-date">02 Jul</span></button>
+    <button class="day-btn"           onclick="showDay(10)" id="btn10"><span class="day-btn-num">H10</span><span class="day-btn-date">03 Jul</span></button>
+  </div>
+  <div class="day-nav-border"></div>
+</div>
+
+<!-- CONTENT -->
 <div class="content">
 
+  <!-- legend & note (shown once, always visible) -->
   <div class="legend">
     <div class="legend-title">Keterangan Jenis Kegiatan</div>
     <div><span class="type-badge type-flight">✈ Penerbangan</span></div>
@@ -373,453 +166,497 @@
     <div><span class="type-badge type-transfer">🚌 Transfer</span></div>
     <div><span class="type-badge type-hotel">🏨 Hotel</span></div>
   </div>
-
-  <div class="note-bar">
-    ⏰ <strong>Catatan:</strong> Jam dengan tanda <em>*estimasi</em> merupakan perkiraan berdasarkan urutan kegiatan — jam eksplisit diambil langsung dari dokumen itinerary.
-  </div>
+  <div class="note-bar">⏰ <strong>Catatan:</strong> Jam dengan tanda <em>*estimasi</em> merupakan perkiraan berdasarkan urutan kegiatan — jam eksplisit diambil langsung dari dokumen itinerary.</div>
 
   <!-- ═══ HARI 1 ═══ -->
-  <div class="day-block">
-    <div class="day-header">
-      <div class="day-number">H1</div>
-      <div class="day-info">
-        <div class="day-date">Rabu, 24 Juni 2026</div>
-        <div class="day-title">Jakarta → Muscat, Oman</div>
+  <div class="day-panel active" id="day1">
+    <div class="day-card">
+      <div class="day-card-header">
+        <div class="day-circle">H1</div>
+        <div class="day-info">
+          <div class="day-date-text">Rabu, 24 Juni 2026</div>
+          <div class="day-subtitle">Jakarta → Muscat, Oman</div>
+        </div>
+        <div class="day-pill">Jakarta · Oman</div>
       </div>
-      <div class="day-location-pill">Jakarta · Oman</div>
+      <table class="schedule-table">
+        <thead><tr><th class="col-time">Jam</th><th class="col-zone">Zona</th><th class="col-type">Jenis</th><th>Kegiatan</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="time-exact">10:00</span><span class="time-zone">WIB</span></td>
+            <td>Jakarta</td>
+            <td><span class="type-badge type-transfer">🚌 Transfer</span></td>
+            <td><div class="activity-main">Berkumpul di Lounge Zukafia</div><div class="activity-note">Terminal 3, Bandara Soekarno-Hatta</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-exact">14:25</span><span class="time-zone">WIB</span></td>
+            <td>Jakarta</td>
+            <td><span class="type-badge type-flight">✈ Penerbangan</span></td>
+            <td><div class="activity-main">Take Off Jakarta → Muscat</div><div class="activity-note">Oman Airlines WY 850</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-exact">19:50</span><span class="time-zone">Waktu Oman</span></td>
+            <td>Muscat</td>
+            <td><span class="type-badge type-hotel">🏨 Hotel</span></td>
+            <td><div class="activity-main">Tiba di Bandara Internasional Muscat</div><div class="activity-note">Proses imigrasi · pengambilan bagasi · transfer & check-in hotel</div></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <table class="schedule-table">
-      <thead><tr>
-        <th class="col-time">Jam</th>
-        <th class="col-zone">Zona</th>
-        <th class="col-type">Jenis</th>
-        <th>Kegiatan</th>
-      </tr></thead>
-      <tbody>
-        <tr>
-          <td><span class="time-exact">10:00</span><span class="time-zone">WIB</span></td>
-          <td>Jakarta</td>
-          <td><span class="type-badge type-transfer">🚌 Transfer</span></td>
-          <td><div class="activity-main">Berkumpul di Lounge Zukafia</div><div class="activity-note">Terminal 3, Bandara Soekarno-Hatta</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-exact">14:25</span><span class="time-zone">WIB</span></td>
-          <td>Jakarta</td>
-          <td><span class="type-badge type-flight">✈ Penerbangan</span></td>
-          <td><div class="activity-main">Take Off Jakarta → Muscat</div><div class="activity-note">Oman Airlines WY 850</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-exact">19:50</span><span class="time-zone">Waktu Oman</span></td>
-          <td>Muscat</td>
-          <td><span class="type-badge type-hotel">🏨 Hotel</span></td>
-          <td><div class="activity-main">Tiba di Bandara Internasional Muscat</div><div class="activity-note">Proses imigrasi · pengambilan bagasi · transfer & check-in hotel</div></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="day-nav-bottom">
+      <button class="nav-arrow" disabled>&#8592; Sebelumnya</button>
+      <div class="nav-center-info">Hari 1 dari 10<span>24 Juni 2026</span></div>
+      <button class="nav-arrow" onclick="showDay(2)">Hari 2 &#8594;</button>
+    </div>
   </div>
 
   <!-- ═══ HARI 2 ═══ -->
-  <div class="day-block">
-    <div class="day-header">
-      <div class="day-number">H2</div>
-      <div class="day-info">
-        <div class="day-date">Kamis, 25 Juni 2026</div>
-        <div class="day-title">Oman → Thaif → Makkah · Umroh ke-1</div>
+  <div class="day-panel" id="day2">
+    <div class="day-card">
+      <div class="day-card-header">
+        <div class="day-circle">H2</div>
+        <div class="day-info">
+          <div class="day-date-text">Kamis, 25 Juni 2026</div>
+          <div class="day-subtitle">Oman → Thaif → Makkah · Umroh ke-1</div>
+        </div>
+        <div class="day-pill">Oman · Makkah</div>
       </div>
-      <div class="day-location-pill">Oman · Makkah</div>
+      <table class="schedule-table">
+        <thead><tr><th class="col-time">Jam</th><th class="col-zone">Zona</th><th class="col-type">Jenis</th><th>Kegiatan</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="time-cell">07:00</span><span class="time-zone">Waktu Oman</span><span class="time-approx">*estimasi</span></td>
+            <td>Muscat</td>
+            <td><span class="type-badge type-hotel">🏨 Hotel</span></td>
+            <td><div class="activity-main">Sarapan & Check-out Hotel</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-cell">08:30</span><span class="time-zone">Waktu Oman</span><span class="time-approx">*estimasi</span></td>
+            <td>Muscat</td>
+            <td><span class="type-badge type-tour">🏛 City Tour</span></td>
+            <td><div class="activity-main">Kunjungan Masjid Agung Sultan Qaboos</div><div class="activity-note">Salah satu masjid terbesar di dunia, Muscat</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-cell">10:00</span><span class="time-zone">Waktu Oman</span><span class="time-approx">*estimasi</span></td>
+            <td>Muscat</td>
+            <td><span class="type-badge type-tour">🏛 City Tour</span></td>
+            <td><div class="activity-main">Jelajah & Belanja di Matrah Souq</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-cell">11:30</span><span class="time-zone">Waktu Oman</span><span class="time-approx">*estimasi</span></td>
+            <td>Muscat</td>
+            <td><span class="type-badge type-transfer">🚌 Transfer</span></td>
+            <td><div class="activity-main">Menuju Bandara Internasional Muscat</div><div class="activity-note">Check-in ulang untuk penerbangan ke Thaif</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-exact">13:35</span><span class="time-zone">Waktu Oman</span></td>
+            <td>Muscat</td>
+            <td><span class="type-badge type-flight">✈ Penerbangan</span></td>
+            <td><div class="activity-main">Take Off Muscat → Thaif</div><div class="activity-note">Oman Airlines WY 699</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-cell">15:30</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
+            <td>Thaif</td>
+            <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
+            <td><div class="activity-main">Tiba di Bandara Thaif</div><div class="activity-note">Menuju Masjid Qornul Manaziel untuk ambil Miqat</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-cell">17:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
+            <td>Thaif→Makkah</td>
+            <td><span class="type-badge type-transfer">🚌 Transfer</span></td>
+            <td><div class="activity-main">Perjalanan Menuju Hotel Makkah</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-cell">20:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
+            <td>Makkah</td>
+            <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
+            <td><div class="activity-main">🕋 Pelaksanaan Umroh Pertama</div><div class="activity-note">Check-in hotel · istirahat sebentar · rangkaian Umroh ke-1</div></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <table class="schedule-table">
-      <thead><tr>
-        <th class="col-time">Jam</th>
-        <th class="col-zone">Zona</th>
-        <th class="col-type">Jenis</th>
-        <th>Kegiatan</th>
-      </tr></thead>
-      <tbody>
-        <tr>
-          <td><span class="time-cell">07:00</span><span class="time-zone">Waktu Oman</span><span class="time-approx">*estimasi</span></td>
-          <td>Muscat</td>
-          <td><span class="type-badge type-hotel">🏨 Hotel</span></td>
-          <td><div class="activity-main">Sarapan & Check-out Hotel</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-cell">08:30</span><span class="time-zone">Waktu Oman</span><span class="time-approx">*estimasi</span></td>
-          <td>Muscat</td>
-          <td><span class="type-badge type-tour">🏛 City Tour</span></td>
-          <td><div class="activity-main">Kunjungan Masjid Agung Sultan Qaboos</div><div class="activity-note">Salah satu masjid terbesar di dunia, Muscat</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-cell">10:00</span><span class="time-zone">Waktu Oman</span><span class="time-approx">*estimasi</span></td>
-          <td>Muscat</td>
-          <td><span class="type-badge type-tour">🏛 City Tour</span></td>
-          <td><div class="activity-main">Jelajah & Belanja di Matrah Souq</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-cell">11:30</span><span class="time-zone">Waktu Oman</span><span class="time-approx">*estimasi</span></td>
-          <td>Muscat</td>
-          <td><span class="type-badge type-transfer">🚌 Transfer</span></td>
-          <td><div class="activity-main">Menuju Bandara Internasional Muscat</div><div class="activity-note">Check-in ulang untuk penerbangan ke Thaif</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-exact">13:35</span><span class="time-zone">Waktu Oman</span></td>
-          <td>Muscat</td>
-          <td><span class="type-badge type-flight">✈ Penerbangan</span></td>
-          <td><div class="activity-main">Take Off Muscat → Thaif</div><div class="activity-note">Oman Airlines WY 699</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-cell">15:30</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
-          <td>Thaif</td>
-          <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
-          <td><div class="activity-main">Tiba di Bandara Thaif</div><div class="activity-note">Menuju Masjid Qornul Manaziel untuk ambil Miqat</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-cell">17:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
-          <td>Thaif→Makkah</td>
-          <td><span class="type-badge type-transfer">🚌 Transfer</span></td>
-          <td><div class="activity-main">Perjalanan Menuju Hotel Makkah</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-cell">20:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
-          <td>Makkah</td>
-          <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
-          <td><div class="activity-main">🕋 Pelaksanaan Umroh Pertama</div><div class="activity-note">Check-in hotel · istirahat sebentar · rangkaian Umroh ke-1</div></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="day-nav-bottom">
+      <button class="nav-arrow" onclick="showDay(1)">&#8592; Hari 1</button>
+      <div class="nav-center-info">Hari 2 dari 10<span>25 Juni 2026</span></div>
+      <button class="nav-arrow" onclick="showDay(3)">Hari 3 &#8594;</button>
+    </div>
   </div>
 
   <!-- ═══ HARI 3 ═══ -->
-  <div class="day-block">
-    <div class="day-header">
-      <div class="day-number">H3</div>
-      <div class="day-info">
-        <div class="day-date">Jum'at, 26 Juni 2026</div>
-        <div class="day-title">Makkah – Free Program</div>
+  <div class="day-panel" id="day3">
+    <div class="day-card">
+      <div class="day-card-header">
+        <div class="day-circle">H3</div>
+        <div class="day-info">
+          <div class="day-date-text">Jum'at, 26 Juni 2026</div>
+          <div class="day-subtitle">Makkah – Free Program</div>
+        </div>
+        <div class="day-pill">Makkah</div>
       </div>
-      <div class="day-location-pill">Makkah</div>
+      <table class="schedule-table">
+        <thead><tr><th class="col-time">Jam</th><th class="col-zone">Zona</th><th class="col-type">Jenis</th><th>Kegiatan</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="time-cell">04:30</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
+            <td>Makkah</td>
+            <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
+            <td><div class="activity-main">Sholat Subuh di Masjidil Haram</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-cell">Seharian</span><span class="time-zone">WSA</span></td>
+            <td>Makkah</td>
+            <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
+            <td><div class="activity-main">Free Program – Ibadah Mandiri</div><div class="activity-note">Dianjurkan memperbanyak ibadah di Masjidil Haram (termasuk Sholat Jum'at)</div></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <table class="schedule-table">
-      <thead><tr>
-        <th class="col-time">Jam</th>
-        <th class="col-zone">Zona</th>
-        <th class="col-type">Jenis</th>
-        <th>Kegiatan</th>
-      </tr></thead>
-      <tbody>
-        <tr>
-          <td><span class="time-cell">04:30</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
-          <td>Makkah</td>
-          <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
-          <td><div class="activity-main">Sholat Subuh di Masjidil Haram</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-cell">Seharian</span><span class="time-zone">WSA</span></td>
-          <td>Makkah</td>
-          <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
-          <td><div class="activity-main">Free Program – Ibadah Mandiri</div><div class="activity-note">Dianjurkan memperbanyak ibadah di Masjidil Haram (termasuk Sholat Jum'at)</div></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="day-nav-bottom">
+      <button class="nav-arrow" onclick="showDay(2)">&#8592; Hari 2</button>
+      <div class="nav-center-info">Hari 3 dari 10<span>26 Juni 2026</span></div>
+      <button class="nav-arrow" onclick="showDay(4)">Hari 4 &#8594;</button>
+    </div>
   </div>
 
   <!-- ═══ HARI 4 ═══ -->
-  <div class="day-block">
-    <div class="day-header">
-      <div class="day-number">H4</div>
-      <div class="day-info">
-        <div class="day-date">Sabtu, 27 Juni 2026</div>
-        <div class="day-title">Makkah – Ziarah Luar & Umroh ke-2</div>
+  <div class="day-panel" id="day4">
+    <div class="day-card">
+      <div class="day-card-header">
+        <div class="day-circle">H4</div>
+        <div class="day-info">
+          <div class="day-date-text">Sabtu, 27 Juni 2026</div>
+          <div class="day-subtitle">Makkah – Ziarah Luar & Umroh ke-2</div>
+        </div>
+        <div class="day-pill">Makkah</div>
       </div>
-      <div class="day-location-pill">Makkah</div>
+      <table class="schedule-table">
+        <thead><tr><th class="col-time">Jam</th><th class="col-zone">Zona</th><th class="col-type">Jenis</th><th>Kegiatan</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="time-cell">06:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
+            <td>Makkah</td>
+            <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
+            <td><div class="activity-main">Mandi Ihram</div><div class="activity-note">Bagi jama'ah yang akan Umroh Kedua</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-exact">07:30</span><span class="time-zone">WSA</span></td>
+            <td>Makkah</td>
+            <td><span class="type-badge type-ziarah">🕌 Ziarah</span></td>
+            <td><div class="activity-main">Berkumpul di Lobby – City Tour Ziarah Luar</div><div class="activity-note">Jabal Tsur · Jabal Nur · Jabal Rahmah · Padang Arafah · Mina</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-cell">11:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
+            <td>Makkah</td>
+            <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
+            <td><div class="activity-main">🕋 Ambil Miqat di Masjid Aisyah</div><div class="activity-note">Dilanjutkan pelaksanaan Umroh Kedua (badal umroh keluarga)</div></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <table class="schedule-table">
-      <thead><tr>
-        <th class="col-time">Jam</th>
-        <th class="col-zone">Zona</th>
-        <th class="col-type">Jenis</th>
-        <th>Kegiatan</th>
-      </tr></thead>
-      <tbody>
-        <tr>
-          <td><span class="time-cell">06:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
-          <td>Makkah</td>
-          <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
-          <td><div class="activity-main">Mandi Ihram</div><div class="activity-note">Bagi jama'ah yang akan Umroh Kedua</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-exact">07:30</span><span class="time-zone">WSA</span></td>
-          <td>Makkah</td>
-          <td><span class="type-badge type-ziarah">🕌 Ziarah</span></td>
-          <td><div class="activity-main">Berkumpul di Lobby – Berangkat City Tour Ziarah Luar</div><div class="activity-note">Jabal Tsur · Jabal Nur · Jabal Rahmah · Padang Arafah · Mina</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-cell">11:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
-          <td>Makkah</td>
-          <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
-          <td><div class="activity-main">🕋 Ambil Miqat di Masjid Aisyah</div><div class="activity-note">Dilanjutkan pelaksanaan Umroh Kedua (badal umroh keluarga)</div></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="day-nav-bottom">
+      <button class="nav-arrow" onclick="showDay(3)">&#8592; Hari 3</button>
+      <div class="nav-center-info">Hari 4 dari 10<span>27 Juni 2026</span></div>
+      <button class="nav-arrow" onclick="showDay(5)">Hari 5 &#8594;</button>
+    </div>
   </div>
 
   <!-- ═══ HARI 5 ═══ -->
-  <div class="day-block">
-    <div class="day-header">
-      <div class="day-number">H5</div>
-      <div class="day-info">
-        <div class="day-date">Ahad, 28 Juni 2026</div>
-        <div class="day-title">Makkah → Madinah</div>
+  <div class="day-panel" id="day5">
+    <div class="day-card">
+      <div class="day-card-header">
+        <div class="day-circle">H5</div>
+        <div class="day-info">
+          <div class="day-date-text">Ahad, 28 Juni 2026</div>
+          <div class="day-subtitle">Makkah → Madinah</div>
+        </div>
+        <div class="day-pill">Makkah · Madinah</div>
       </div>
-      <div class="day-location-pill">Makkah · Madinah</div>
+      <table class="schedule-table">
+        <thead><tr><th class="col-time">Jam</th><th class="col-zone">Zona</th><th class="col-type">Jenis</th><th>Kegiatan</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="time-cell">04:30</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
+            <td>Makkah</td>
+            <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
+            <td><div class="activity-main">Sholat Subuh Berjama'ah</div><div class="activity-note">Dilanjutkan Thawaf Wada' (thawaf perpisahan)</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-cell">07:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
+            <td>Makkah</td>
+            <td><span class="type-badge type-hotel">🏨 Hotel</span></td>
+            <td><div class="activity-main">Berkemas & Check-out Hotel Makkah</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-exact">13:00</span><span class="time-zone">WSA</span></td>
+            <td>Makkah</td>
+            <td><span class="type-badge type-transfer">🚌 Transfer</span></td>
+            <td><div class="activity-main">Berkumpul di Lobby – Berangkat ke Madinah</div><div class="activity-note">Perjalanan darat dengan Bus, ±6 jam</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-cell">19:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
+            <td>Madinah</td>
+            <td><span class="type-badge type-hotel">🏨 Hotel</span></td>
+            <td><div class="activity-main">Tiba & Check-in Hotel Madinah</div><div class="activity-note">Memperbanyak ibadah di Masjid Nabawi</div></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <table class="schedule-table">
-      <thead><tr>
-        <th class="col-time">Jam</th>
-        <th class="col-zone">Zona</th>
-        <th class="col-type">Jenis</th>
-        <th>Kegiatan</th>
-      </tr></thead>
-      <tbody>
-        <tr>
-          <td><span class="time-cell">04:30</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
-          <td>Makkah</td>
-          <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
-          <td><div class="activity-main">Sholat Subuh Berjama'ah</div><div class="activity-note">Dilanjutkan Thawaf Wada' (thawaf perpisahan)</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-cell">07:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
-          <td>Makkah</td>
-          <td><span class="type-badge type-hotel">🏨 Hotel</span></td>
-          <td><div class="activity-main">Berkemas & Check-out Hotel Makkah</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-exact">13:00</span><span class="time-zone">WSA</span></td>
-          <td>Makkah</td>
-          <td><span class="type-badge type-transfer">🚌 Transfer</span></td>
-          <td><div class="activity-main">Berkumpul di Lobby – Berangkat ke Madinah</div><div class="activity-note">Perjalanan darat dengan Bus, ±6 jam</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-cell">19:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
-          <td>Madinah</td>
-          <td><span class="type-badge type-hotel">🏨 Hotel</span></td>
-          <td><div class="activity-main">Tiba & Check-in Hotel Madinah</div><div class="activity-note">Memperbanyak ibadah di Masjid Nabawi</div></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="day-nav-bottom">
+      <button class="nav-arrow" onclick="showDay(4)">&#8592; Hari 4</button>
+      <div class="nav-center-info">Hari 5 dari 10<span>28 Juni 2026</span></div>
+      <button class="nav-arrow" onclick="showDay(6)">Hari 6 &#8594;</button>
+    </div>
   </div>
 
   <!-- ═══ HARI 6 ═══ -->
-  <div class="day-block">
-    <div class="day-header">
-      <div class="day-number">H6</div>
-      <div class="day-info">
-        <div class="day-date">Senin, 29 Juni 2026</div>
-        <div class="day-title">Madinah – Ziarah Dalam & Rawdha</div>
+  <div class="day-panel" id="day6">
+    <div class="day-card">
+      <div class="day-card-header">
+        <div class="day-circle">H6</div>
+        <div class="day-info">
+          <div class="day-date-text">Senin, 29 Juni 2026</div>
+          <div class="day-subtitle">Madinah – Ziarah Dalam & Rawdha</div>
+        </div>
+        <div class="day-pill">Madinah</div>
       </div>
-      <div class="day-location-pill">Madinah</div>
+      <table class="schedule-table">
+        <thead><tr><th class="col-time">Jam</th><th class="col-zone">Zona</th><th class="col-type">Jenis</th><th>Kegiatan</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="time-cell">04:30</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
+            <td>Madinah</td>
+            <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
+            <td><div class="activity-main">Sholat Subuh di Masjid Nabawi</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-cell">08:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
+            <td>Madinah</td>
+            <td><span class="type-badge type-ziarah">🕌 Ziarah</span></td>
+            <td><div class="activity-main">Ziarah ke Rawdha & Makam Rasulullah SAW</div><div class="activity-note">Beserta ziarah ke makam para sahabat</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-cell">Seharian</span><span class="time-zone">WSA</span></td>
+            <td>Madinah</td>
+            <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
+            <td><div class="activity-main">Memperbanyak Ibadah & Sholat di Masjid Nabawi</div></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <table class="schedule-table">
-      <thead><tr>
-        <th class="col-time">Jam</th>
-        <th class="col-zone">Zona</th>
-        <th class="col-type">Jenis</th>
-        <th>Kegiatan</th>
-      </tr></thead>
-      <tbody>
-        <tr>
-          <td><span class="time-cell">04:30</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
-          <td>Madinah</td>
-          <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
-          <td><div class="activity-main">Sholat Subuh di Masjid Nabawi</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-cell">08:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
-          <td>Madinah</td>
-          <td><span class="type-badge type-ziarah">🕌 Ziarah</span></td>
-          <td><div class="activity-main">Ziarah ke Rawdha & Makam Rasulullah SAW</div><div class="activity-note">Beserta ziarah ke makam para sahabat</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-cell">Seharian</span><span class="time-zone">WSA</span></td>
-          <td>Madinah</td>
-          <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
-          <td><div class="activity-main">Memperbanyak Ibadah & Sholat di Masjid Nabawi</div></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="day-nav-bottom">
+      <button class="nav-arrow" onclick="showDay(5)">&#8592; Hari 5</button>
+      <div class="nav-center-info">Hari 6 dari 10<span>29 Juni 2026</span></div>
+      <button class="nav-arrow" onclick="showDay(7)">Hari 7 &#8594;</button>
+    </div>
   </div>
 
   <!-- ═══ HARI 7 ═══ -->
-  <div class="day-block">
-    <div class="day-header">
-      <div class="day-number">H7</div>
-      <div class="day-info">
-        <div class="day-date">Selasa, 30 Juni 2026</div>
-        <div class="day-title">Madinah – City Tour Kota Madinah</div>
+  <div class="day-panel" id="day7">
+    <div class="day-card">
+      <div class="day-card-header">
+        <div class="day-circle">H7</div>
+        <div class="day-info">
+          <div class="day-date-text">Selasa, 30 Juni 2026</div>
+          <div class="day-subtitle">Madinah – City Tour Kota Madinah</div>
+        </div>
+        <div class="day-pill">Madinah</div>
       </div>
-      <div class="day-location-pill">Madinah</div>
+      <table class="schedule-table">
+        <thead><tr><th class="col-time">Jam</th><th class="col-zone">Zona</th><th class="col-type">Jenis</th><th>Kegiatan</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="time-cell">04:30</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
+            <td>Madinah</td>
+            <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
+            <td><div class="activity-main">Sholat Subuh di Masjid Nabawi</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-exact">08:00</span><span class="time-zone">WSA</span></td>
+            <td>Madinah</td>
+            <td><span class="type-badge type-tour">🏛 City Tour</span></td>
+            <td><div class="activity-main">Berkumpul di Lobby – City Tour Madinah</div><div class="activity-note">Masjid Quba · Kebun Kurma · Jabal Uhud · Maqam Baqi · Masjid Kiblatain</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-cell">13:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
+            <td>Madinah</td>
+            <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
+            <td><div class="activity-main">Kembali ke Hotel – Sholat & Ibadah di Masjid Nabawi</div></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <table class="schedule-table">
-      <thead><tr>
-        <th class="col-time">Jam</th>
-        <th class="col-zone">Zona</th>
-        <th class="col-type">Jenis</th>
-        <th>Kegiatan</th>
-      </tr></thead>
-      <tbody>
-        <tr>
-          <td><span class="time-cell">04:30</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
-          <td>Madinah</td>
-          <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
-          <td><div class="activity-main">Sholat Subuh di Masjid Nabawi</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-exact">08:00</span><span class="time-zone">WSA</span></td>
-          <td>Madinah</td>
-          <td><span class="type-badge type-tour">🏛 City Tour</span></td>
-          <td><div class="activity-main">Berkumpul di Lobby – Berangkat City Tour Madinah</div><div class="activity-note">Masjid Quba · Kebun Kurma · Jabal Uhud · Maqam Baqi · Masjid Kiblatain</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-cell">13:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
-          <td>Madinah</td>
-          <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
-          <td><div class="activity-main">Kembali ke Hotel – Sholat & Ibadah di Masjid Nabawi</div></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="day-nav-bottom">
+      <button class="nav-arrow" onclick="showDay(6)">&#8592; Hari 6</button>
+      <div class="nav-center-info">Hari 7 dari 10<span>30 Juni 2026</span></div>
+      <button class="nav-arrow" onclick="showDay(8)">Hari 8 &#8594;</button>
+    </div>
   </div>
 
   <!-- ═══ HARI 8 ═══ -->
-  <div class="day-block">
-    <div class="day-header">
-      <div class="day-number">H8</div>
-      <div class="day-info">
-        <div class="day-date">Rabu, 01 Juli 2026</div>
-        <div class="day-title">Madinah → Thaif (Check-out)</div>
+  <div class="day-panel" id="day8">
+    <div class="day-card">
+      <div class="day-card-header">
+        <div class="day-circle">H8</div>
+        <div class="day-info">
+          <div class="day-date-text">Rabu, 01 Juli 2026</div>
+          <div class="day-subtitle">Madinah → Thaif (Check-out)</div>
+        </div>
+        <div class="day-pill">Madinah · Thaif</div>
       </div>
-      <div class="day-location-pill">Madinah · Thaif</div>
+      <table class="schedule-table">
+        <thead><tr><th class="col-time">Jam</th><th class="col-zone">Zona</th><th class="col-type">Jenis</th><th>Kegiatan</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="time-cell">04:30</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
+            <td>Madinah</td>
+            <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
+            <td><div class="activity-main">Sholat Subuh di Masjid Nabawi</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-cell">09:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
+            <td>Madinah</td>
+            <td><span class="type-badge type-hotel">🏨 Hotel</span></td>
+            <td><div class="activity-main">Berkemas & Persiapan Check-out</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-exact">13:00</span><span class="time-zone">WSA</span></td>
+            <td>Madinah</td>
+            <td><span class="type-badge type-transfer">🚌 Transfer</span></td>
+            <td><div class="activity-main">Berkumpul di Lobby – Berangkat ke Thaif</div><div class="activity-note">Bermalam di Thaif sebelum melanjutkan penerbangan</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-cell">20:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
+            <td>Thaif</td>
+            <td><span class="type-badge type-hotel">🏨 Hotel</span></td>
+            <td><div class="activity-main">Tiba & Check-in Hotel Thaif</div></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <table class="schedule-table">
-      <thead><tr>
-        <th class="col-time">Jam</th>
-        <th class="col-zone">Zona</th>
-        <th class="col-type">Jenis</th>
-        <th>Kegiatan</th>
-      </tr></thead>
-      <tbody>
-        <tr>
-          <td><span class="time-cell">04:30</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
-          <td>Madinah</td>
-          <td><span class="type-badge type-ibadah">☪ Ibadah</span></td>
-          <td><div class="activity-main">Sholat Subuh di Masjid Nabawi</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-cell">09:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
-          <td>Madinah</td>
-          <td><span class="type-badge type-hotel">🏨 Hotel</span></td>
-          <td><div class="activity-main">Berkemas & Persiapan Check-out</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-exact">13:00</span><span class="time-zone">WSA</span></td>
-          <td>Madinah</td>
-          <td><span class="type-badge type-transfer">🚌 Transfer</span></td>
-          <td><div class="activity-main">Berkumpul di Lobby – Berangkat ke Thaif</div><div class="activity-note">Bermalam di Thaif sebelum melanjutkan penerbangan</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-cell">20:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
-          <td>Thaif</td>
-          <td><span class="type-badge type-hotel">🏨 Hotel</span></td>
-          <td><div class="activity-main">Tiba & Check-in Hotel Thaif</div></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="day-nav-bottom">
+      <button class="nav-arrow" onclick="showDay(7)">&#8592; Hari 7</button>
+      <div class="nav-center-info">Hari 8 dari 10<span>01 Juli 2026</span></div>
+      <button class="nav-arrow" onclick="showDay(9)">Hari 9 &#8594;</button>
+    </div>
   </div>
 
   <!-- ═══ HARI 9 ═══ -->
-  <div class="day-block">
-    <div class="day-header">
-      <div class="day-number">H9</div>
-      <div class="day-info">
-        <div class="day-date">Kamis, 02 Juli 2026</div>
-        <div class="day-title">City Tour Thaif → Muscat, Oman</div>
+  <div class="day-panel" id="day9">
+    <div class="day-card">
+      <div class="day-card-header">
+        <div class="day-circle">H9</div>
+        <div class="day-info">
+          <div class="day-date-text">Kamis, 02 Juli 2026</div>
+          <div class="day-subtitle">City Tour Thaif → Muscat, Oman</div>
+        </div>
+        <div class="day-pill">Thaif · Muscat</div>
       </div>
-      <div class="day-location-pill">Thaif · Muscat</div>
+      <table class="schedule-table">
+        <thead><tr><th class="col-time">Jam</th><th class="col-zone">Zona</th><th class="col-type">Jenis</th><th>Kegiatan</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="time-cell">08:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
+            <td>Thaif</td>
+            <td><span class="type-badge type-tour">🏛 City Tour</span></td>
+            <td><div class="activity-main">City Tour Kota Thaif</div><div class="activity-note">Menikmati wahana Kereta Gantung / Telefrik</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-cell">12:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
+            <td>Thaif</td>
+            <td><span class="type-badge type-transfer">🚌 Transfer</span></td>
+            <td><div class="activity-main">Menuju Bandara Internasional Thaif</div><div class="activity-note">Check-in dengan pendampingan Muthawwif & Tour Leader Alviandra</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-exact">16:40</span><span class="time-zone">WSA</span></td>
+            <td>Thaif</td>
+            <td><span class="type-badge type-flight">✈ Penerbangan</span></td>
+            <td><div class="activity-main">Take Off Thaif → Muscat</div><div class="activity-note">Oman Airlines WY 700</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-exact">20:50</span><span class="time-zone">Waktu Oman</span></td>
+            <td>Muscat</td>
+            <td><span class="type-badge type-transfer">🚌 Transfer</span></td>
+            <td><div class="activity-main">Tiba di Bandara Internasional Muscat</div><div class="activity-note">Ganti pesawat · menunggu penerbangan transit ke Jakarta</div></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <table class="schedule-table">
-      <thead><tr>
-        <th class="col-time">Jam</th>
-        <th class="col-zone">Zona</th>
-        <th class="col-type">Jenis</th>
-        <th>Kegiatan</th>
-      </tr></thead>
-      <tbody>
-        <tr>
-          <td><span class="time-cell">08:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
-          <td>Thaif</td>
-          <td><span class="type-badge type-tour">🏛 City Tour</span></td>
-          <td><div class="activity-main">City Tour Kota Thaif</div><div class="activity-note">Menikmati wahana Kereta Gantung / Telefrik</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-cell">12:00</span><span class="time-zone">WSA</span><span class="time-approx">*estimasi</span></td>
-          <td>Thaif</td>
-          <td><span class="type-badge type-transfer">🚌 Transfer</span></td>
-          <td><div class="activity-main">Menuju Bandara Internasional Thaif</div><div class="activity-note">Check-in dengan pendampingan Muthawwif & Tour Leader Alviandra</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-exact">16:40</span><span class="time-zone">WSA</span></td>
-          <td>Thaif</td>
-          <td><span class="type-badge type-flight">✈ Penerbangan</span></td>
-          <td><div class="activity-main">Take Off Thaif → Muscat</div><div class="activity-note">Oman Airlines WY 700</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-exact">20:50</span><span class="time-zone">Waktu Oman</span></td>
-          <td>Muscat</td>
-          <td><span class="type-badge type-transfer">🚌 Transfer</span></td>
-          <td><div class="activity-main">Tiba di Bandara Internasional Muscat</div><div class="activity-note">Ganti pesawat · menunggu penerbangan transit ke Jakarta</div></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="day-nav-bottom">
+      <button class="nav-arrow" onclick="showDay(8)">&#8592; Hari 8</button>
+      <div class="nav-center-info">Hari 9 dari 10<span>02 Juli 2026</span></div>
+      <button class="nav-arrow" onclick="showDay(10)">Hari 10 &#8594;</button>
+    </div>
   </div>
 
   <!-- ═══ HARI 10 ═══ -->
-  <div class="day-block">
-    <div class="day-header">
-      <div class="day-number">H10</div>
-      <div class="day-info">
-        <div class="day-date">Jum'at, 03 Juli 2026</div>
-        <div class="day-title">Muscat → Jakarta (Pulang)</div>
+  <div class="day-panel" id="day10">
+    <div class="day-card">
+      <div class="day-card-header">
+        <div class="day-circle">H10</div>
+        <div class="day-info">
+          <div class="day-date-text">Jum'at, 03 Juli 2026</div>
+          <div class="day-subtitle">Muscat → Jakarta (Pulang)</div>
+        </div>
+        <div class="day-pill">Muscat · Jakarta</div>
       </div>
-      <div class="day-location-pill">Muscat · Jakarta</div>
+      <table class="schedule-table">
+        <thead><tr><th class="col-time">Jam</th><th class="col-zone">Zona</th><th class="col-type">Jenis</th><th>Kegiatan</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="time-exact">01:50</span><span class="time-zone">Waktu Oman</span></td>
+            <td>Muscat</td>
+            <td><span class="type-badge type-flight">✈ Penerbangan</span></td>
+            <td><div class="activity-main">Take Off Muscat → Jakarta (CGK)</div></td>
+          </tr>
+          <tr>
+            <td><span class="time-exact">12:55</span><span class="time-zone">WIB</span></td>
+            <td>Jakarta</td>
+            <td><span class="type-badge type-hotel">🏠 Tiba</span></td>
+            <td><div class="activity-main">🏠 Tiba di Bandara Soekarno-Hatta – Alhamdulillah</div><div class="activity-note">InshaAllah selamat sampai tujuan</div></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <table class="schedule-table">
-      <thead><tr>
-        <th class="col-time">Jam</th>
-        <th class="col-zone">Zona</th>
-        <th class="col-type">Jenis</th>
-        <th>Kegiatan</th>
-      </tr></thead>
-      <tbody>
-        <tr>
-          <td><span class="time-exact">01:50</span><span class="time-zone">Waktu Oman</span></td>
-          <td>Muscat</td>
-          <td><span class="type-badge type-flight">✈ Penerbangan</span></td>
-          <td><div class="activity-main">Take Off Muscat → Jakarta (CGK)</div></td>
-        </tr>
-        <tr>
-          <td><span class="time-exact">12:55</span><span class="time-zone">WIB</span></td>
-          <td>Jakarta</td>
-          <td><span class="type-badge type-hotel">🏨 Tiba</span></td>
-          <td><div class="activity-main">🏠 Tiba di Bandara Soekarno-Hatta – Alhamdulillah</div><div class="activity-note">InshaAllah selamat sampai tujuan</div></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="day-nav-bottom">
+      <button class="nav-arrow" onclick="showDay(9)">&#8592; Hari 9</button>
+      <div class="nav-center-info">Hari 10 dari 10<span>03 Juli 2026</span></div>
+      <button class="nav-arrow" disabled>Selesai ✓</button>
+    </div>
   </div>
 
-</div>
+</div><!-- end .content -->
 
 <div class="footer">
   <strong>PT. Alviandra Edu Wisata</strong> &nbsp;·&nbsp; Izin Umroh 16032300311480002 Tahun 2024<br>
   Jl. Slawi No.2 Kp. Pedurenan RT.006/004, Kel. Cibaruyut, Kec. Cigombong, Kab. Bogor &nbsp;·&nbsp; 📞 0856 1127 814 &nbsp;·&nbsp; alviandraeduwisata@gmail.com
 </div>
 
+<script>
+function showDay(n) {
+  // hide all panels
+  document.querySelectorAll('.day-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.day-btn').forEach(b => b.classList.remove('active'));
+  // show selected
+  document.getElementById('day' + n).classList.add('active');
+  document.getElementById('btn' + n).classList.add('active');
+  // scroll to top of nav
+  document.querySelector('.day-nav-wrap').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+// Auto-highlight today's tab if trip is ongoing
+(function(){
+  const today = new Date();
+  const days = [
+    new Date('2026-06-24'),new Date('2026-06-25'),new Date('2026-06-26'),
+    new Date('2026-06-27'),new Date('2026-06-28'),new Date('2026-06-29'),
+    new Date('2026-06-30'),new Date('2026-07-01'),new Date('2026-07-02'),
+    new Date('2026-07-03')
+  ];
+  const todayStr = today.toDateString();
+  days.forEach((d,i) => {
+    if(d.toDateString() === todayStr) showDay(i+1);
+  });
+})();
+</script>
 </body>
 </html>
